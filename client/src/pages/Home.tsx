@@ -20,13 +20,12 @@ export default function Home() {
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          {/* Black luxury car wheel detail shot */}
           <img 
-            src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=2574&auto=format&fit=crop" 
-            alt="Premium Tire Service Background" 
-            className="w-full h-full object-cover"
+            src="https://i.imgur.com/cpFX64f.png" 
+            alt="ReifenDrive Premium Service" 
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/40" />
         </div>
 
         <div className="container-padding relative z-10 w-full max-w-7xl mx-auto pt-20">
