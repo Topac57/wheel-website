@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X, Car, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logoImage from "@assets/E8009928-B8C0-467B-98F5-620C8777A198_1769811446156.PNG";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,37 +28,27 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"
+        isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-4"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
           <ScrollLink
             to="home"
             smooth={true}
-            className="flex items-center gap-2 cursor-pointer group"
+            className="cursor-pointer"
+            data-testid="link-home-logo"
           >
-            <div className="bg-primary p-2 rounded-lg text-white group-hover:scale-105 transition-transform">
-              <Car className="h-6 w-6" />
-            </div>
-            <div className="flex flex-col">
-              <span className={cn(
-                "font-display font-bold text-lg leading-none tracking-tight",
-                isScrolled ? "text-slate-900" : "text-slate-900 lg:text-white"
-              )}>
-                TAHA TALEB
-              </span>
-              <span className={cn(
-                "text-xs font-medium tracking-widest uppercase opacity-80",
-                isScrolled ? "text-slate-600" : "text-slate-600 lg:text-white/80"
-              )}>
-                Premium Service
-              </span>
-            </div>
+            <img 
+              src={logoImage} 
+              alt="ReifenDrive Logo" 
+              className={cn(
+                "h-12 md:h-14 w-auto transition-all",
+                !isScrolled && "brightness-0 invert lg:brightness-100 lg:invert-0"
+              )}
+            />
           </ScrollLink>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <ScrollLink
@@ -70,11 +61,12 @@ export function Navbar() {
                   "text-sm font-medium cursor-pointer hover:text-primary transition-colors uppercase tracking-wide",
                   isScrolled ? "text-slate-600" : "text-white/90 hover:text-white"
                 )}
+                data-testid={`link-nav-${link.to}`}
               >
                 {link.name}
               </ScrollLink>
             ))}
-            <a href="tel:+491637947079">
+            <a href="tel:+491637947079" data-testid="button-nav-call">
               <Button 
                 variant={isScrolled ? "default" : "secondary"}
                 className={cn(
@@ -88,20 +80,19 @@ export function Navbar() {
             </a>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             className={cn(
               "md:hidden p-2 rounded-md",
               isScrolled ? "text-slate-900" : "text-slate-900 lg:text-white"
             )}
             onClick={() => setIsOpen(!isOpen)}
+            data-testid="button-mobile-menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-xl animate-in slide-in-from-top-5">
           <div className="flex flex-col p-4 gap-4">
@@ -113,11 +104,12 @@ export function Navbar() {
                 offset={-80}
                 className="text-lg font-medium text-slate-800 py-2 border-b border-gray-100"
                 onClick={() => setIsOpen(false)}
+                data-testid={`link-mobile-${link.to}`}
               >
                 {link.name}
               </ScrollLink>
             ))}
-            <a href="tel:+491637947079" className="w-full">
+            <a href="tel:+491637947079" className="w-full" data-testid="button-mobile-call">
               <Button className="w-full gap-2 rounded-xl py-6 text-lg">
                 <Phone className="h-5 w-5" />
                 Jetzt Anrufen

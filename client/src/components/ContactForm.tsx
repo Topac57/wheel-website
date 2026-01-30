@@ -1,119 +1,74 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useCreateInquiry } from "@/hooks/use-inquiries";
-import { insertInquirySchema, type InsertInquiry } from "@shared/schema";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Send, Loader2 } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
-export function ContactForm() {
-  const mutation = useCreateInquiry();
-  
-  const form = useForm<InsertInquiry>({
-    resolver: zodResolver(insertInquirySchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(data: InsertInquiry) {
-    mutation.mutate(data, {
-      onSuccess: () => {
-        form.reset();
-      },
-    });
-  }
-
+export function DirectContact() {
   return (
-    <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+    <div className="space-y-6">
       <div className="mb-8">
-        <h3 className="text-2xl font-bold mb-2">Kontaktieren Sie uns</h3>
-        <p className="text-muted-foreground">Wir melden uns umgehend bei Ihnen zurück.</p>
+        <h3 className="text-2xl font-bold mb-2 text-white">Direkter Kontakt</h3>
+        <p className="text-gray-400">Rufen Sie uns an oder schreiben Sie per WhatsApp.</p>
       </div>
 
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input 
-                    placeholder="Max Mustermann" 
-                    {...field} 
-                    className="h-12 rounded-xl bg-gray-50 border-gray-200 focus:ring-primary/20 focus:border-primary"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Telefonnummer</FormLabel>
-                <FormControl>
-                  <Input 
-                    type="tel" 
-                    placeholder="0176 12345678" 
-                    {...field} 
-                    className="h-12 rounded-xl bg-gray-50 border-gray-200 focus:ring-primary/20 focus:border-primary"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Nachricht (Optional)</FormLabel>
-                <FormControl>
-                  <Textarea 
-                    placeholder="Ich brauche einen Termin für..." 
-                    className="min-h-[120px] rounded-xl bg-gray-50 border-gray-200 focus:ring-primary/20 focus:border-primary resize-none"
-                    {...field} 
-                    value={field.value || ""}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <Button 
-            type="submit" 
-            className="w-full h-12 rounded-xl text-lg font-bold gap-2 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
-            disabled={mutation.isPending}
-          >
-            {mutation.isPending ? (
-              <Loader2 className="h-5 w-5 animate-spin" />
-            ) : (
-              <Send className="h-5 w-5" />
-            )}
-            {mutation.isPending ? "Wird gesendet..." : "Anfrage senden"}
-          </Button>
-        </form>
-      </Form>
+      <div className="grid gap-4">
+        <motion.a
+          href="tel:+491637947079"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="group flex items-center gap-5 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hover:border-primary/30 transition-all duration-300"
+          data-testid="button-call-contact"
+        >
+          <div className="bg-slate-900 p-4 rounded-xl text-white group-hover:bg-primary transition-colors">
+            <Phone className="h-7 w-7" />
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">Jetzt Anrufen</p>
+            <p className="text-xl font-bold text-slate-900">0163 794 70 79</p>
+          </div>
+        </motion.a>
+
+        <motion.a
+          href="https://wa.me/491637947079"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="group flex items-center gap-5 bg-[#25D366] p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+          data-testid="button-whatsapp-contact"
+        >
+          <div className="bg-white/20 p-4 rounded-xl text-white">
+            <MessageCircle className="h-7 w-7" />
+          </div>
+          <div className="flex-1 text-white">
+            <p className="text-sm font-medium text-white/80 uppercase tracking-wide mb-1">WhatsApp schreiben</p>
+            <p className="text-xl font-bold">Sofort verbinden</p>
+          </div>
+        </motion.a>
+      </div>
+
+      <div className="mt-8 pt-6 border-t border-white/10">
+        <div className="space-y-4 text-gray-400">
+          <div className="flex items-start gap-3">
+            <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <p className="font-medium text-white">Adresse</p>
+              <p>Ludwig-Richter-Str. 13</p>
+              <p>42429 Wuppertal</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Clock className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <p className="font-medium text-white">Geschäftszeiten</p>
+              <p>Mo - Fr: 08:00 - 18:00</p>
+              <p>Sa: 09:00 - 14:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
+}
+
+export function ContactForm() {
+  return <DirectContact />;
 }

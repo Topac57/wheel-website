@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Link as ScrollLink } from "react-scroll";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Phone, MessageCircle, CheckCircle2 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ContactForm } from "@/components/ContactForm";
@@ -43,9 +42,9 @@ export default function Home() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-[1.1] mb-6">
-              Perfektion <br />
+              Premium Reifen- & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-400">
-                für Ihre Räder.
+                Felgenservice in Wuppertal
               </span>
             </h1>
             
@@ -55,18 +54,24 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <ScrollLink to="contact" smooth={true} offset={-50}>
+              <a href="tel:+491637947079" data-testid="button-hero-call">
                 <Button className="h-14 px-8 rounded-full text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 hover:scale-105 transition-all duration-300">
-                  Termin vereinbaren
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <Phone className="mr-2 h-5 w-5" />
+                  Jetzt anrufen
                 </Button>
-              </ScrollLink>
+              </a>
               
-              <ScrollLink to="services" smooth={true} offset={-80}>
-                <Button variant="outline" className="h-14 px-8 rounded-full text-lg font-bold border-white/20 bg-white/5 text-white hover:bg-white/10 backdrop-blur-sm">
-                  Leistungen ansehen
+              <a 
+                href="https://wa.me/491637947079" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                data-testid="button-hero-whatsapp"
+              >
+                <Button variant="outline" className="h-14 px-8 rounded-full text-lg font-bold border-white/20 bg-[#25D366] text-white hover:bg-[#25D366]/90 backdrop-blur-sm">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  WhatsApp
                 </Button>
-              </ScrollLink>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -133,7 +138,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="lg:w-1/2"
           >
-            <h2 className="text-4xl font-bold mb-6">Warum Taha Taleb?</h2>
+            <h2 className="text-4xl font-bold mb-6">Warum ReifenDrive?</h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
               Wir verbinden handwerkliche Präzision mit modernster Technik. Bei uns ist Ihr Fahrzeug in besten Händen – egal ob Sportwagen, SUV oder Limousine.
             </p>
@@ -208,7 +213,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto container-padding">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h4 className="text-lg font-bold mb-4">Taha Taleb</h4>
+              <h4 className="text-lg font-bold mb-4">ReifenDrive</h4>
               <p className="text-gray-500 text-sm leading-relaxed">
                 Ihr Experte für Reifen und Felgen in Wuppertal. <br />
                 Qualität, die bewegt.
@@ -235,7 +240,7 @@ export default function Home() {
           </div>
           
           <div className="pt-8 border-t border-white/10 text-center text-sm text-gray-600">
-            &copy; {new Date().getFullYear()} Taha Taleb Reifen- & Felgenservice. Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} ReifenDrive - Taha Taleb. Alle Rechte vorbehalten.
           </div>
         </div>
       </footer>
