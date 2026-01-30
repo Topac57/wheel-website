@@ -1,0 +1,74 @@
+Build a modern premium one-page website for a tire & rim service in Wuppertal (Germany). The site must be SEO-optimized for local search.
+
+TECH STACK
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- framer-motion for subtle animations
+- lucide-react icons
+- Clean, production-ready code
+- One-page layout at /
+
+BRANDING / COLORS
+- Primary color: #38b000
+- Background: white
+- Secondary color: black
+- Premium, minimal, high-end look
+- Mobile-first design
+
+BUSINESS DATA
+- Name: Taha Taleb
+- Address: Ludwig-Richter-Str. 13, 42429 Wuppertal
+- Phone & WhatsApp: +491637947079
+
+PRIMARY GOAL
+- Make phone and WhatsApp contact extremely prominent
+- tel:+491637947079
+- https://wa.me/491637947079
+- Sticky mobile contact bar
+
+SEO REQUIREMENTS (VERY IMPORTANT)
+- Use Next.js Metadata API
+- Set SEO metadata:
+  - title: "Premium Reifen- & Felgenservice in Wuppertal | Taha Taleb"
+  - description: "Reifenwechsel, Felgenservice und Premium Reifenmontage in Wuppertal. Schneller Kontakt per Telefon & WhatsApp."
+- Add OpenGraph metadata (og:title, og:description, og:type=website, og:locale=de_DE)
+- Use one H1 only:
+  "Premium Reifen- & Felgenservice in Wuppertal"
+- Use semantic HTML (header, main, section, footer)
+- Naturally include local keywords (Wuppertal, Reifenservice, Felgenservice)
+- Display full address and phone number in visible text
+- Embed Google Maps for Ludwig-Richter-Str. 13, 42429 Wuppertal
+- Add JSON-LD structured data:
+  - @type: AutoRepair
+  - name, address, telephone
+- Create sitemap.ts for the domain
+- Create robots.ts allowing indexing
+
+CONTENT (GERMAN)
+- Professional, premium tone
+- Target middle to upper class customers
+- Focus on quality, precision, premium service
+
+SERVICES
+- Reifenwechsel Sommer/Winter
+- Reifenmontage & Demontage
+- Reifen auswuchten
+- Reifeneinlagerung
+- Felgenservice & Felgenpflege
+- Beratung für Premium- & Sportfahrzeuge
+
+UX / UI
+- Modern premium hero section
+- Large typography
+- Smooth scroll navigation
+- Subtle scroll animations
+- Floating WhatsApp button (desktop)
+- Sticky call-to-action on mobile
+
+LEGAL
+- Create /impressum and /datenschutz pages with German placeholders
+
+DELIVERABLES
+- Fully working Next.js project
+- npm install & npm run dev works
+- README explaining where to change SEO, business data and colors
