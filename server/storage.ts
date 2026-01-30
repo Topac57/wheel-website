@@ -1,38 +1,73 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { db } from "./db";
+import {
+  services,
+  inquiries,
+  type Service,
+  type InsertService,
+  type InsertInquiry,
+  type Inquiry
+} from "@shared/schema";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  getServices(): Promise<Service[]>;
+  createInquiry(inquiry: InsertInquiry): Promise<Inquiry>;
+  seedServices(): Promise<void>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-
-  constructor() {
-    this.users = new Map();
+export class DatabaseStorage implements IStorage {
+  async getServices(): Promise<Service[]> {
+    return await db.select().from(services);
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async createInquiry(inquiry: InsertInquiry): Promise<Inquiry> {
+    const [newInquiry] = await db.insert(inquiries).values(inquiry).returning();
+    return newInquiry;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async seedServices(): Promise<void> {
+    const existing = await this.getServices();
+    if (existing.length === 0) {
+      await db.insert(services).values([
+        {
+          title: "Reifenwechsel Sommer/Winter",
+          description: "Professioneller Radwechsel für maximale Sicherheit zu jeder Jahreszeit.",
+          icon: "RefreshCw",
+          category: "tire"
+        },
+        {
+          title: "Reifenmontage",
+          description: "Fachgerechte Montage und Demontage Ihrer Reifen auf Stahl- oder Alufelgen.",
+          icon: "Wrench",
+          category: "tire"
+        },
+        {
+          title: "Reifen auswuchten",
+          description: "Präzises Auswuchten für ein ruhiges Fahrverhalten und geringeren Verschleiß.",
+          icon: "Gauge",
+          category: "tire"
+        },
+        {
+          title: "Reifeneinlagerung",
+          description: "Fachgerechte Lagerung Ihrer Saisonreifen unter optimalen Bedingungen.",
+          icon: "Warehouse",
+          category: "tire"
+        },
+        {
+          title: "Felgenservice",
+          description: "Professionelle Reinigung und Pflege für den Werterhalt Ihrer Felgen.",
+          icon: "Disc",
+          category: "rim"
+        },
+        {
+          title: "Premium Beratung",
+          description: "Individuelle Beratung für Premium- und Sportfahrzeuge.",
+          icon: "ShieldCheck",
+          category: "consulting"
+        }
+      ]);
+    }
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
