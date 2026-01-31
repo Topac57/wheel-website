@@ -153,43 +153,19 @@ export default function Home() {
               ))}
             </ul>
 
-            <div className="mt-8 pt-8 border-t border-gray-100 flex gap-8">
-              <div>
-                <p className="text-3xl font-bold text-primary">1500+</p>
-                <p className="text-sm text-muted-foreground">Zufriedene Kunden</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary">100%</p>
-                <p className="text-sm text-muted-foreground">Servicequalität</p>
-              </div>
+            <div className="mt-8 pt-8 border-t border-gray-100">
+              <p className="text-sm font-medium text-slate-900 mb-3">Bewertungen</p>
+              <a 
+                href="https://share.google/wFe2tPCE3SRGJa3p4" 
+                target="_blank" 
+                rel="noreferrer"
+                data-testid="button-google-reviews"
+              >
+                <Button className="rounded-full font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 hover:scale-105 transition-all duration-300">
+                  Google Rezensionen ansehen
+                </Button>
+              </a>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* BEWERTUNGEN SECTION */}
-      <section id="rezensionen" className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto container-padding">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center max-w-2xl mx-auto"
-          >
-            <h2 className="text-4xl font-bold mb-4 text-slate-900">Bewertungen</h2>
-            <p className="text-slate-600 text-lg mb-8">
-              Echte Kundenmeinungen finden Sie auf Google.
-            </p>
-            <a 
-              href="https://share.google/wFe2tPCE3SRGJa3p4" 
-              target="_blank" 
-              rel="noreferrer"
-              data-testid="button-google-reviews"
-            >
-              <Button className="h-14 px-8 rounded-full text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 hover:scale-105 transition-all duration-300">
-                Google Rezensionen ansehen
-              </Button>
-            </a>
           </motion.div>
         </div>
       </section>

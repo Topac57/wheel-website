@@ -21,7 +21,6 @@ export function Navbar() {
     { name: "Start", to: "home" },
     { name: "Leistungen", to: "services" },
     { name: "Über Uns", to: "about" },
-    { name: "Rezensionen", to: "rezensionen" },
     { name: "Kontakt", to: "contact" },
   ];
 
