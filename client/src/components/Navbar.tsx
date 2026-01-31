@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import logoImage from "@assets/E8009928-B8C0-467B-98F5-620C8777A198_1769811446156.PNG";
+import logoImage from "@assets/logo-taleb_1769854324948.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
