@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, CheckCircle2 } from "lucide-react";
+import { Phone, MessageCircle, CheckCircle2, Star, ExternalLink, Quote } from "lucide-react";
 import aboutLogo from "@assets/logo-taleb_1769854557829.png";
 import { Navbar } from "@/components/Navbar";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -163,6 +163,111 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">Servicequalität</p>
               </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* GOOGLE REZENSIONEN SECTION */}
+      <section id="rezensionen" className="section-padding bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto container-padding">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4 text-slate-900">Google Rezensionen</h2>
+            <p className="text-muted-foreground text-lg">
+              Echtes Kundenfeedback auf Google. Lesen Sie, was unsere Kunden über ReifenDrive sagen.
+            </p>
+          </motion.div>
+
+          {/* Rating Visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center mb-12"
+          >
+            <div className="bg-slate-50 rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
+              <div className="flex items-center justify-center gap-1 mb-3">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="w-8 h-8 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="text-5xl font-bold text-slate-900 mb-2">5,0</p>
+              <p className="text-sm text-muted-foreground">Bewertungen auf Google ansehen</p>
+              <p className="text-xs text-gray-400 mt-2">*Darstellung zur Illustration</p>
+            </div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          >
+            <a 
+              href="https://share.google/wFe2tPCE3SRGJa3p4" 
+              target="_blank" 
+              rel="noreferrer"
+              data-testid="button-view-reviews"
+            >
+              <Button className="h-14 px-8 rounded-full text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 hover:scale-105 transition-all duration-300 gap-2">
+                <ExternalLink className="w-5 h-5" />
+                Bewertungen ansehen
+              </Button>
+            </a>
+            <a 
+              href="https://share.google/wFe2tPCE3SRGJa3p4" 
+              target="_blank" 
+              rel="noreferrer"
+              data-testid="button-leave-review"
+            >
+              <Button variant="outline" className="h-14 px-8 rounded-full text-lg font-bold border-primary text-primary hover:bg-primary/10 transition-all duration-300 gap-2">
+                <Star className="w-5 h-5" />
+                Jetzt bewerten
+              </Button>
+            </a>
+          </motion.div>
+
+          {/* Kundenstimmen */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold text-center mb-8 text-slate-900">Kundenstimmen</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: "Kunde aus Wuppertal", text: "Schneller und professioneller Service. Meine Reifen wurden in kürzester Zeit gewechselt. Sehr zu empfehlen!" },
+                { name: "Zufriedener Autofahrer", text: "Top Beratung und faire Preise. Das Team weiß genau, was es tut. Komme gerne wieder!" },
+                { name: "Stammkunde", text: "Seit Jahren mein Vertrauen. Zuverlässig, pünktlich und immer freundlich. Perfekter Service!" },
+                { name: "Kunde aus Solingen", text: "Felgenpflege auf höchstem Niveau. Meine Alufelgen sehen aus wie neu. Danke!" },
+              ].map((review, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-slate-50 rounded-2xl p-6 border border-gray-100 relative"
+                >
+                  <Quote className="w-8 h-8 text-primary/20 absolute top-4 right-4" />
+                  <div className="flex gap-1 mb-3">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="w-4 h-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-slate-700 mb-4 leading-relaxed">{review.text}</p>
+                  <p className="text-sm font-medium text-slate-900">{review.name}</p>
+                </motion.div>
+              ))}
+            </div>
+            <p className="text-center text-sm text-muted-foreground mt-8">
+              Auszug – weitere Bewertungen auf Google
+            </p>
           </motion.div>
         </div>
       </section>
