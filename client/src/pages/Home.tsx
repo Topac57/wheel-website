@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, CheckCircle2 } from "lucide-react";
+import aboutLogo from "@assets/logo-taleb_1769854557829.png";
 import { Navbar } from "@/components/Navbar";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ContactForm } from "@/components/ContactForm";
@@ -116,18 +117,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="lg:w-1/2"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              {/* Mechanic working on tire - professional shop */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white p-8 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1574755980205-04285743b194?q=80&w=2574&auto=format&fit=crop" 
-                alt="Werkstatt Team" 
-                className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
+                src={aboutLogo} 
+                alt="ReifenDrive Logo" 
+                className="w-full max-w-md h-auto transform hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-8 left-8 text-white">
-                <p className="font-bold text-2xl">Meisterhafte Qualität</p>
-                <p className="text-gray-200">Seit über 10 Jahren</p>
-              </div>
             </div>
           </motion.div>
 
