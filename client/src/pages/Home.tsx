@@ -156,7 +156,7 @@ export default function Home() {
             <div className="mt-8 pt-8 border-t border-gray-100">
               <p className="text-sm font-medium text-slate-900 mb-3">Bewertungen</p>
               <a 
-                href="https://share.google/wFe2tPCE3SRGJa3p4" 
+                href="https://www.google.com/search?sca_esv=e9cd3016bda74c25&hl=de-DE&sxsrf=ANbL-n4LCedEn4nPjl4u-Uujf6HjD_qjUQ:1769855923982&q=Reifendrive+Taha+Taleb&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOQvWt28VtG3JvYfWt1zMtJLqQQZH0CilivLhyQGEPHZKiCEaVaPl4r1VphPVAPEg6viaLAM%3D&uds=ALYpb_kTpE9zdcnRXvuX97Rkoz7X6VE4N_JHO0htiv-gpRb02vU_kVzFzf9vzUq1OI8jseN_mrPK-iLJh1ocGkxgpQTrzy0YxLKvbFt4F0CNpHgQHAMZp1FOY_0uk9WwGXJZIYJ772hh&sa=X&ved=2ahUKEwiHhpyNy7WSAxX20wIHHdPONHsQ3PALegQIGhAE&biw=1728&bih=998&dpr=2&aic=0" 
                 target="_blank" 
                 rel="noreferrer"
                 data-testid="button-google-reviews"
