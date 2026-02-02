@@ -16,7 +16,6 @@ export default function Home() {
     <div className="min-h-screen font-sans bg-background text-foreground pb-20 md:pb-0">
       <Navbar />
       <FloatingActions />
-
       {/* HERO SECTION */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
@@ -76,7 +75,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* SERVICES SECTION */}
       <section id="services" className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto container-padding">
@@ -107,7 +105,6 @@ export default function Home() {
           )}
         </div>
       </section>
-
       {/* ABOUT SECTION */}
       <section id="about" className="section-padding bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto container-padding flex flex-col lg:flex-row items-center gap-16">
@@ -169,7 +166,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* CONTACT SECTION */}
       <section id="contact" className="section-padding bg-slate-900 text-white relative">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
@@ -178,7 +174,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto container-padding relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Kontakt & Termin</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#ffffff]">Kontakt & Termin</h2>
             <p className="text-gray-400 text-lg">
               Besuchen Sie uns oder vereinbaren Sie direkt einen Termin.
             </p>
@@ -204,7 +200,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* FOOTER */}
       <footer className="bg-black text-white py-12 border-t border-white/10">
         <div className="max-w-7xl mx-auto container-padding">
