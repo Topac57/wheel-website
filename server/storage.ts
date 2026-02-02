@@ -26,47 +26,52 @@ export class DatabaseStorage implements IStorage {
   }
 
   async seedServices(): Promise<void> {
-    const existing = await this.getServices();
-    if (existing.length === 0) {
-      await db.insert(services).values([
-        {
-          title: "Reifenwechsel Sommer/Winter",
-          description: "Professioneller Radwechsel für maximale Sicherheit zu jeder Jahreszeit.",
-          icon: "RefreshCw",
-          category: "tire"
-        },
-        {
-          title: "Reifenmontage",
-          description: "Fachgerechte Montage und Demontage Ihrer Reifen auf Stahl- oder Alufelgen.",
-          icon: "Wrench",
-          category: "tire"
-        },
-        {
-          title: "Reifen auswuchten",
-          description: "Präzises Auswuchten für ein ruhiges Fahrverhalten und geringeren Verschleiß.",
-          icon: "Gauge",
-          category: "tire"
-        },
-        {
-          title: "Reifeneinlagerung",
-          description: "Fachgerechte Lagerung Ihrer Saisonreifen unter optimalen Bedingungen.",
-          icon: "Warehouse",
-          category: "tire"
-        },
-        {
-          title: "Felgenservice",
-          description: "Professionelle Reinigung und Pflege für den Werterhalt Ihrer Felgen.",
-          icon: "Disc",
-          category: "rim"
-        },
-        {
-          title: "Premium Beratung",
-          description: "Individuelle Beratung für Premium- und Sportfahrzeuge.",
-          icon: "ShieldCheck",
-          category: "consulting"
-        }
-      ]);
-    }
+    // Clear existing and reseed with updated data
+    await db.delete(services);
+    await db.insert(services).values([
+      {
+        title: "Reifenwechsel Sommer/Winter",
+        description: "Professioneller Radwechsel für maximale Sicherheit zu jeder Jahreszeit.",
+        icon: "RefreshCw",
+        category: "tire",
+        image: "https://i.imgur.com/KYSBCNi.jpeg"
+      },
+      {
+        title: "Reifenmontage",
+        description: "Fachgerechte Montage und Demontage Ihrer Reifen auf Stahl- oder Alufelgen.",
+        icon: "Wrench",
+        category: "tire",
+        image: "https://i.imgur.com/RztsjSj.jpeg"
+      },
+      {
+        title: "Reifen auswuchten",
+        description: "Präzises Auswuchten für ein ruhiges Fahrverhalten und geringeren Verschleiß.",
+        icon: "Gauge",
+        category: "tire",
+        image: "https://i.imgur.com/fiwh1Hk.jpeg"
+      },
+      {
+        title: "Reifeneinlagerung",
+        description: "Fachgerechte Lagerung Ihrer Saisonreifen unter optimalen Bedingungen.",
+        icon: "Warehouse",
+        category: "tire",
+        image: "https://i.imgur.com/1WenJcY.jpeg"
+      },
+      {
+        title: "Felgenservice",
+        description: "Professionelle Reinigung und Pflege für den Werterhalt Ihrer Felgen.",
+        icon: "Disc",
+        category: "rim",
+        image: "https://i.imgur.com/QoAtIbY.jpeg"
+      },
+      {
+        title: "An- und Verkauf von Reifen",
+        description: "Ankauf & Verkauf von Neu- und Gebrauchtreifen – fair bewertet, geprüft und passend zu Ihrem Fahrzeug.",
+        icon: "ShoppingCart",
+        category: "sales",
+        image: "https://i.imgur.com/P54z2O0.jpeg"
+      }
+    ]);
   }
 }
 
