@@ -1,0 +1,36 @@
+Update my existing Reifenwerkstatt website (Next.js App Router + Tailwind). In the “Leistungen” section, adjust the services and make each service card clickable. When a user clicks a service card, open a dedicated detail page for that service (new route). Each detail page must contain: a clear H1 title, a short premium intro, a detailed description (benefits + process), a small FAQ (3–5 items), and at the bottom a strong “Termin vereinbaren” area with two buttons: “Jetzt anrufen” (tel:+491637947079) and “WhatsApp” (https://wa.me/491637947079). Keep background pure white, text black, accent color #38b000. Keep overall design modern and premium.
+
+SERVICES LIST (update the cards to exactly these):
+1) Reifenwechsel (Sommer / Winter / Allwetter)  -> slug: /leistungen/reifenwechsel
+2) Reifenmontage & Demontage                    -> slug: /leistungen/reifenmontage
+3) Reifen auswuchten                            -> slug: /leistungen/auswuchten
+4) Bremssattel-Lackierung                       -> slug: /leistungen/bremssattel-lackierung
+5) Felgenservice                                -> slug: /leistungen/felgenservice
+6) An- & Verkauf von Reifen                      -> slug: /leistungen/reifen-an-verkauf
+
+IMPORTANT CONTENT RULES:
+- Replace the existing “Reifeneinlagerung” card completely with “Bremssattel-Lackierung”.
+- In “Reifenwechsel” detail page, explicitly include the three options: Sommerreifen, Winterreifen, Allwetterreifen. Show them as selectable chips or a small list titled “Reifenarten zur Auswahl”.
+- In “An- & Verkauf von Reifen” detail page, also include “Reifenarten zur Auswahl” with Sommerreifen/Winterreifen/Allwetterreifen plus a short note that availability depends on supplier stock and that the customer should contact via WhatsApp/phone for immediate offers.
+- Do NOT add any shopping cart or checkout. Just list the options and drive to contact/appointment.
+
+ROUTING IMPLEMENTATION:
+- Convert the service cards on the home page into <Link> elements pointing to the respective /leistungen/... routes.
+- Create a shared layout/template component for service detail pages to keep consistent design.
+- Add a breadcrumb or “Zurück” link back to the homepage and a “Alle Leistungen” anchor link.
+- Add SEO metadata per page (title + description) mentioning Wuppertal naturally (e.g., “Reifenwechsel in Wuppertal – Sommer, Winter, Allwetter | Taha Taleb”).
+
+TERMIN / CTA BLOCK (must appear on every detail page):
+- A compact card near the bottom with: “Termin vereinbaren”, short line “Schnell per Telefon oder WhatsApp”, then two buttons:
+  - Primary green button: tel:+491637947079
+  - Secondary outlined button: https://wa.me/491637947079
+- Also display name + address: “Taha Taleb, Ludwig-Richter-Str. 13, 42429 Wuppertal”.
+
+DESIGN:
+- Maintain premium look: big headings, lots of whitespace, subtle hover effects on cards, gentle motion on page load (if framer-motion already installed; if not, do not add heavy new dependencies).
+- Keep performance high and mobile-first.
+
+DELIVERABLE:
+- Home page service section updated
+- All 6 detail pages created and linked correctly
+- Ensure npm run dev works and navigation is correct
