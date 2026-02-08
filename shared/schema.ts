@@ -10,6 +10,7 @@ export const services = pgTable("services", {
   icon: text("icon").notNull(), // Lucide icon name
   category: text("category").notNull(), // 'tire' or 'rim'
   image: text("image"), // Background image URL
+  slug: text("slug"), // URL slug for detail page
 });
 
 export const inquiries = pgTable("inquiries", {

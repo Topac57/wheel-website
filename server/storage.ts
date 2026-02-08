@@ -26,50 +26,55 @@ export class DatabaseStorage implements IStorage {
   }
 
   async seedServices(): Promise<void> {
-    // Clear existing and reseed with updated data
     await db.delete(services);
     await db.insert(services).values([
       {
-        title: "Reifenwechsel Sommer/Winter",
+        title: "Reifenwechsel (Sommer / Winter / Allwetter)",
         description: "Professioneller Radwechsel für maximale Sicherheit zu jeder Jahreszeit.",
         icon: "RefreshCw",
         category: "tire",
-        image: "https://i.imgur.com/KYSBCNi.jpeg"
+        image: "https://i.imgur.com/KYSBCNi.jpeg",
+        slug: "reifenwechsel"
       },
       {
-        title: "Reifenmontage",
+        title: "Reifenmontage & Demontage",
         description: "Fachgerechte Montage und Demontage Ihrer Reifen auf Stahl- oder Alufelgen.",
         icon: "Wrench",
         category: "tire",
-        image: "https://i.imgur.com/RztsjSj.jpeg"
+        image: "https://i.imgur.com/RztsjSj.jpeg",
+        slug: "reifenmontage"
       },
       {
         title: "Reifen auswuchten",
         description: "Präzises Auswuchten für ein ruhiges Fahrverhalten und geringeren Verschleiß.",
         icon: "Gauge",
         category: "tire",
-        image: "https://i.imgur.com/fiwh1Hk.jpeg"
+        image: "https://i.imgur.com/fiwh1Hk.jpeg",
+        slug: "auswuchten"
       },
       {
-        title: "Reifeneinlagerung",
-        description: "Fachgerechte Lagerung Ihrer Saisonreifen unter optimalen Bedingungen.",
-        icon: "Warehouse",
-        category: "tire",
-        image: "https://i.imgur.com/1WenJcY.jpeg"
+        title: "Bremssattel-Lackierung",
+        description: "Individuelle Farbgestaltung Ihrer Bremssättel für einen sportlichen Look.",
+        icon: "Paintbrush",
+        category: "custom",
+        image: "https://i.imgur.com/1WenJcY.jpeg",
+        slug: "bremssattel-lackierung"
       },
       {
         title: "Felgenservice",
         description: "Professionelle Reinigung und Pflege für den Werterhalt Ihrer Felgen.",
         icon: "Disc",
         category: "rim",
-        image: "https://i.imgur.com/QoAtIbY.jpeg"
+        image: "https://i.imgur.com/QoAtIbY.jpeg",
+        slug: "felgenservice"
       },
       {
-        title: "An- und Verkauf von Reifen",
+        title: "An- & Verkauf von Reifen",
         description: "Ankauf & Verkauf von Neu- und Gebrauchtreifen – fair bewertet, geprüft und passend zu Ihrem Fahrzeug.",
         icon: "ShoppingCart",
         category: "sales",
-        image: "https://i.imgur.com/P54z2O0.jpeg"
+        image: "https://i.imgur.com/P54z2O0.jpeg",
+        slug: "reifen-an-verkauf"
       }
     ]);
   }
