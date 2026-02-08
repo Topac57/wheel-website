@@ -57,7 +57,7 @@ export class DatabaseStorage implements IStorage {
         description: "Individuelle Farbgestaltung Ihrer Bremssättel für einen sportlichen Look.",
         icon: "Paintbrush",
         category: "custom",
-        image: "https://i.imgur.com/1WenJcY.jpeg",
+        image: "https://i.imgur.com/oQV4knw.jpeg",
         slug: "bremssattel-lackierung"
       },
       {

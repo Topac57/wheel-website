@@ -1,6 +1,64 @@
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+
+const tireBrands = [
+  {
+    name: "Continental",
+    description: "Deutsche Ingenieurskunst für höchste Sicherheit und präzises Fahrverhalten.",
+  },
+  {
+    name: "Michelin",
+    description: "Premium-Reifen mit Fokus auf Langlebigkeit, Komfort und Performance.",
+  },
+  {
+    name: "Pirelli",
+    description: "Sportliche Reifenlösungen für dynamisches Fahren und starke Straßenlage.",
+  },
+  {
+    name: "Goodyear",
+    description: "Innovative Reifentechnologie für zuverlässige Performance bei jedem Wetter.",
+  },
+  {
+    name: "Bridgestone",
+    description: "Hochwertige Reifen mit ausgewogener Balance aus Komfort und Kontrolle.",
+  },
+  {
+    name: "Dunlop",
+    description: "Dynamische Reifen für präzises Handling und sportlichen Fahrstil.",
+  },
+];
+
+function BrandGridSection() {
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-4xl mx-auto container-padding">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold mb-8" data-testid="heading-tire-brands">Bekannte Reifenhersteller</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-testid="brand-grid">
+            {tireBrands.map((brand) => (
+              <Card key={brand.name} className="border-none shadow-sm" data-testid={`brand-card-${brand.name.toLowerCase()}`}>
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold mb-2">{brand.name}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{brand.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <p className="text-muted-foreground text-sm mt-6">
+            Weitere Marken und aktuelle Verfügbarkeiten gerne auf Anfrage.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 export default function Reifenwechsel() {
   return (
@@ -48,6 +106,7 @@ export default function Reifenwechsel() {
             answer: "Ein Termin ist empfehlenswert, damit wir Sie ohne Wartezeit bedienen können. Rufen Sie uns an oder schreiben Sie per WhatsApp."
           }
         ]}
+        extraSections={<BrandGridSection />}
       >
         <div>
           <h3 className="text-2xl font-bold mb-4">Reifenarten zur Auswahl</h3>

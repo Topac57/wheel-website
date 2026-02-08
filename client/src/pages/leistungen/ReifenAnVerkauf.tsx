@@ -49,22 +49,31 @@ export default function ReifenAnVerkauf() {
           }
         ]}
       >
-        <div>
-          <h3 className="text-2xl font-bold mb-4">Reifenarten zur Auswahl</h3>
-          <div className="flex flex-wrap gap-3 mb-4" data-testid="tire-type-chips">
-            <Badge variant="secondary" className="text-base px-5 py-2.5" data-testid="chip-sommerreifen">
-              Sommerreifen
-            </Badge>
-            <Badge variant="secondary" className="text-base px-5 py-2.5" data-testid="chip-winterreifen">
-              Winterreifen
-            </Badge>
-            <Badge variant="secondary" className="text-base px-5 py-2.5" data-testid="chip-allwetterreifen">
-              Allwetterreifen
-            </Badge>
+        <div className="space-y-8">
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Reifenarten zur Auswahl</h3>
+            <div className="flex flex-wrap gap-3 mb-4" data-testid="tire-type-chips">
+              <Badge variant="secondary" className="text-base px-5 py-2.5" data-testid="chip-sommerreifen">
+                Sommerreifen
+              </Badge>
+              <Badge variant="secondary" className="text-base px-5 py-2.5" data-testid="chip-winterreifen">
+                Winterreifen
+              </Badge>
+              <Badge variant="secondary" className="text-base px-5 py-2.5" data-testid="chip-allwetterreifen">
+                Allwetterreifen
+              </Badge>
+            </div>
           </div>
-          <p className="text-muted-foreground text-sm">
-            Verfügbarkeit abhängig vom aktuellen Lagerbestand und Lieferanten. Kontaktieren Sie uns per WhatsApp oder Telefon für sofortige Angebote.
-          </p>
+
+          <div data-testid="manufacturer-info">
+            <h3 className="text-2xl font-bold mb-4">Markenreifen verfügbar</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Je nach Saison und Lieferantenverfügbarkeit führen wir Reifen namhafter Hersteller wie Continental, Michelin, Pirelli, Goodyear, Bridgestone und Dunlop. Unser Bestand wechselt regelmäßig – kontaktieren Sie uns per{" "}
+              <a href="tel:+491637947079" className="text-primary font-medium" data-testid="link-manufacturer-phone">Telefon</a> oder{" "}
+              <a href="https://wa.me/491637947079" target="_blank" rel="noopener noreferrer" className="text-primary font-medium" data-testid="link-manufacturer-whatsapp">WhatsApp</a>{" "}
+              für aktuelle Angebote und Verfügbarkeiten.
+            </p>
+          </div>
         </div>
       </ServiceDetailLayout>
     </>

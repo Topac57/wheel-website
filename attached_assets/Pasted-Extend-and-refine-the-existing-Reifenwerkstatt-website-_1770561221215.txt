@@ -1,0 +1,45 @@
+Extend and refine the existing Reifenwerkstatt website with the following precise changes and additions. In the “Leistungen” section on the homepage, the service card that previously represented “Reifeneinlagerung” has already been replaced by “Bremssattel-Lackierung”. Update the IMAGE of this service card: replace the previous image entirely and use this image URL instead for the Bremssattel-Lackierung card only: https://i.imgur.com/oQV4knw.jpeg. Ensure the image is properly cropped, responsive, high quality, and visually consistent with the other service cards.
+
+All service cards must be clickable and linked to their respective detail pages. IMPORTANT UX BEHAVIOR: when a user clicks on any service card and navigates to the service detail page, the page must load starting at the very top of the page (top of viewport / header area). Do NOT auto-scroll to FAQs or any anchors. Ensure default scroll restoration is enabled so each service page starts at the top.
+
+SERVICE DETAIL CONTENT EXTENSION – REIFENWECHSEL:
+On the “Reifenwechsel (Sommer / Winter / Allwetter)” detail page, add a dedicated trust-building section ABOVE the FAQ section and BEFORE the final appointment/CTA block.
+
+Section title: “Bekannte Reifenhersteller”
+
+Visually present the brands as a clean, modern grid (text-only, no logos). Use a balanced grid layout that looks premium on desktop and mobile.
+
+Include the following brands, each with a one-line, high-quality mini description:
+- Continental – Deutsche Ingenieurskunst für höchste Sicherheit und präzises Fahrverhalten.
+- Michelin – Premium-Reifen mit Fokus auf Langlebigkeit, Komfort und Performance.
+- Pirelli – Sportliche Reifenlösungen für dynamisches Fahren und starke Straßenlage.
+- Goodyear – Innovative Reifentechnologie für zuverlässige Performance bei jedem Wetter.
+- Bridgestone – Hochwertige Reifen mit ausgewogener Balance aus Komfort und Kontrolle.
+- Dunlop – Dynamische Reifen für präzises Handling und sportlichen Fahrstil.
+
+Below the grid, add a short note:
+“Weitere Marken und aktuelle Verfügbarkeiten gerne auf Anfrage.”
+
+Also ensure that on the “An- & Verkauf von Reifen” detail page, a smaller informational paragraph mentions that tires from well-known manufacturers (such as Continental, Michelin, Pirelli, etc.) are available depending on season and supplier availability, with a clear prompt to contact via phone or WhatsApp for current offers.
+
+DO NOT add any shopping cart, checkout, prices, or live stock system. This section is for trust, transparency, and conversion only.
+
+GLOBAL CTA REQUIREMENT:
+At the bottom of every service detail page, include a strong “Termin vereinbaren” block with two buttons:
+- Primary: “Jetzt anrufen” → tel:+491637947079
+- Secondary: “WhatsApp” → https://wa.me/491637947079
+Display business info below: “Taha Taleb, Ludwig-Richter-Str. 13, 42429 Wuppertal”.
+
+DESIGN & TECHNICAL NOTES:
+- Background must remain pure white
+- Text color black, accent color #38b000
+- Premium, modern, clean appearance
+- Mobile-first, responsive layout
+- No unexpected scroll jumps
+- Use proper internal routing (Link components) and ensure scroll-to-top behavior on navigation
+
+DELIVERABLE:
+- Updated Bremssattel-Lackierung service card image using the provided URL
+- Correct scroll-to-top behavior on all service detail pages
+- Trusted tire brands displayed as a clean text-based grid with one-line premium descriptions
+- Consistent design, UX, and working navigation across all service pages

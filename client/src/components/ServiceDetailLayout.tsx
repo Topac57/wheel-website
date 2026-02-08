@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
@@ -22,6 +23,7 @@ interface ServiceDetailLayoutProps {
   faq: FAQItem[];
   heroImage: string;
   children?: React.ReactNode;
+  extraSections?: React.ReactNode;
 }
 
 export function ServiceDetailLayout({
@@ -35,7 +37,12 @@ export function ServiceDetailLayout({
   faq,
   heroImage,
   children,
+  extraSections,
 }: ServiceDetailLayoutProps) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen font-sans bg-background text-foreground pb-20 md:pb-0">
       <Navbar />
@@ -124,6 +131,8 @@ export function ServiceDetailLayout({
           </motion.div>
         </div>
       </section>
+
+      {extraSections}
 
       <section className="py-16 bg-slate-50">
         <div className="max-w-4xl mx-auto container-padding">
