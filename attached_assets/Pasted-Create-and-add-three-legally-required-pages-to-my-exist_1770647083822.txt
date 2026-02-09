@@ -1,0 +1,109 @@
+Create and add three legally required pages to my existing Reifenwerkstatt website: /impressum, /datenschutz, and /agb. Use a clean, professional layout with white background, black text, accent color #38b000, good spacing, readable typography, mobile-first. Add footer links to all three pages (“Impressum”, “Datenschutz”, “AGB”). Each page must start at the top of the viewport and include a “Zurück zur Startseite” link.
+
+USE THE FOLLOWING TEXT EXACTLY AS PROVIDED (do not paraphrase, do not shorten):
+
+====================
+IMPRESSUM
+====================
+
+Angaben gemäß § 5 TMG
+
+Taha Taleb  
+Einzelunternehmen  
+
+Ludwig-Richter-Str. 13  
+Wuppertal-Vohwinkel  
+Deutschland  
+
+Kontakt:  
+Telefon: +49 163 7947079  
+E-Mail: reifendrive@gmail.com  
+
+Steuernummer: 13253255939  
+Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:  
+DE458176534  
+
+Zuständige Aufsichtsbehörde:  
+Stadt Wuppertal – Gewerbeamt  
+
+Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:  
+Taha Taleb, Anschrift wie oben  
+
+Haftung für Inhalte  
+Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+
+Haftung für Links  
+Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+
+====================
+DATENSCHUTZERKLÄRUNG
+====================
+
+1. Verantwortlicher  
+Taha Taleb  
+Ludwig-Richter-Str. 13  
+Wuppertal-Vohwinkel  
+Deutschland  
+E-Mail: reifendrive@gmail.com  
+
+2. Hosting  
+Diese Website wird bei Replit, Inc., USA, gehostet. Beim Hosting können personenbezogene Daten in Drittländer (insbesondere die USA) übertragen werden. Die Übermittlung erfolgt auf Grundlage von Standardvertragsklauseln der EU-Kommission gemäß Art. 46 DSGVO.
+
+3. Zugriffsdaten / Server-Logfiles  
+Beim Aufruf dieser Website werden automatisch Informationen allgemeiner Natur erfasst. Diese Informationen (Server-Logfiles) beinhalten u. a. IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Uhrzeit des Zugriffs. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+
+4. Kontaktaufnahme  
+Bei Kontaktaufnahme per Telefon oder E-Mail werden die übermittelten personenbezogenen Daten ausschließlich zum Zweck der Bearbeitung der Anfrage verarbeitet und nicht ohne Einwilligung weitergegeben.
+
+5. Kontaktaufnahme über WhatsApp  
+Wenn Sie uns über WhatsApp kontaktieren, erfolgt die Kommunikation über WhatsApp Ireland Limited. Dabei können personenbezogene Daten (z. B. Telefonnummer, Nachrichteninhalte, Metadaten) verarbeitet werden. Die Nutzung von WhatsApp erfolgt freiwillig. Es gelten die Datenschutzbestimmungen von WhatsApp.
+
+6. Google Maps  
+Diese Website bindet Kartenmaterial von Google Maps (Google Ireland Limited) ein. Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google übertragen.
+
+7. Google Ads  
+Wir nutzen Google Ads, ein Online-Werbeprogramm der Google Ireland Limited. Im Rahmen von Google Ads können Cookies gesetzt und Nutzungsdaten verarbeitet werden, um die Wirksamkeit von Werbeanzeigen zu messen und zu optimieren.
+
+8. Cookies  
+Diese Website verwendet technisch notwendige Cookies. Eine Analyse des Nutzerverhaltens mittels Analytics oder vergleichbarer Tracking-Tools findet nicht statt.
+
+9. Rechte der betroffenen Personen  
+Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Zudem haben Sie das Recht auf Berichtigung, Sperrung oder Löschung dieser Daten, soweit dem keine gesetzliche Aufbewahrungspflicht entgegensteht. Ihnen steht außerdem ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+
+====================
+ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB)
+====================
+
+1. Geltungsbereich  
+Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge und Dienstleistungen der Reifenwerkstatt Taha Taleb.
+
+2. Leistungen  
+Das Leistungsangebot umfasst insbesondere Reifenwechsel (Sommer-, Winter- und Allwetterreifen), Reifenmontage, Reifen auswuchten, Bremssattel-Lackierung, Felgen-Instandsetzung sowie den An- und Verkauf von Reifen.
+
+3. Terminvereinbarung  
+Termine erfolgen nach individueller Vereinbarung zwischen dem Kunden und dem Unternehmen.
+
+4. Anzahlung bei Reifenbestellungen  
+Bei Terminvereinbarungen, bei denen neue Reifen speziell für den Kunden bestellt werden, ist vor der Bestellung eine angemessene Anzahlung zu leisten. Erfolgt keine Anzahlung, besteht kein Anspruch auf Bestellung der Reifen.
+
+5. Preise und Zahlung  
+Die Zahlung der vereinbarten Leistungen erfolgt vor Ort. Als Zahlungsarten werden Barzahlung und Kartenzahlung akzeptiert.
+
+6. An- und Verkauf von Reifen  
+Der An- und Verkauf von Reifen erfolgt ausschließlich vor Ort im Betrieb.
+
+7. Haftung  
+Es gelten die gesetzlichen Haftungsbestimmungen. Eine Haftung für Schäden, die durch unsachgemäße Nutzung oder durch vom Kunden bereitgestellte Materialien entstehen, ist ausgeschlossen, soweit gesetzlich zulässig.
+
+8. Schlussbestimmungen  
+Es gilt das Recht der Bundesrepublik Deutschland. Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+
+====================
+
+TECHNICAL REQUIREMENTS:
+- Create the routes /impressum, /datenschutz, /agb
+- Add footer links to these pages
+- Keep navigation consistent
+- Ensure pages load at top
+- No additional tracking or cookie banners beyond what is described
+- Ensure npm run dev succeeds
