@@ -192,8 +192,11 @@ export function ServiceDetailLayout({
                 </div>
 
                 <div className="text-gray-400 text-sm space-y-1">
-                  <p className="font-medium text-white">Taha Taleb</p>
+                  <p className="font-medium text-white">ReifenDrive – Taha Taleb</p>
                   <p>Ludwig-Richter-Str. 13, 42429 Wuppertal</p>
+                  <p>
+                    <a href="mailto:reifendrive@gmail.com" className="transition-colors" data-testid="link-detail-email">reifendrive@gmail.com</a>
+                  </p>
                 </div>
               </CardContent>
             </Card>

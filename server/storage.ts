@@ -61,12 +61,12 @@ export class DatabaseStorage implements IStorage {
         slug: "bremssattel-lackierung"
       },
       {
-        title: "Felgenservice",
-        description: "Professionelle Reinigung und Pflege für den Werterhalt Ihrer Felgen.",
+        title: "Felgen Instandsetzung",
+        description: "Professionelle Reparatur, Lackierung und Aufbereitung Ihrer Felgen – von Bordsteinschäden bis zur Farbtonanpassung.",
         icon: "Disc",
         category: "rim",
-        image: "https://i.imgur.com/QoAtIbY.jpeg",
-        slug: "felgenservice"
+        image: "https://i.imgur.com/IZqqFth.jpeg",
+        slug: "felgen-instandsetzung"
       },
       {
         title: "An- & Verkauf von Reifen",

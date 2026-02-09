@@ -1,0 +1,52 @@
+Update the existing Reifenwerkstatt website (Next.js/React + Tailwind) with these changes, keeping the design premium, modern, white background, black text, accent color #38b000, mobile-first, and consistent across homepage + service detail pages.
+
+1) SERVICE NAME CHANGE (Homepage + Routing + Detail Page)
+Replace the service name “Felgenservice” everywhere with “Felgen Instandsetzung”. This includes:
+- The service card title on the homepage Leistungen section
+- Any navigation labels, internal links, and slugs/routes
+- The service detail page title and content
+
+Use this route/slug for the service detail page:
+- /leistungen/felgen-instandsetzung
+
+2) SERVICE CONTENT FOCUS (Felgen Instandsetzung)
+On the “Felgen Instandsetzung” detail page, rewrite the content to focus on:
+- Reparatur von Bordsteinschäden
+- Instandsetzung auch größerer Schäden (soweit möglich)
+- Lackierung in passender Felgenfarbe (Farbtonanpassung)
+- Abschließende Reinigung / Finish
+Write it in German, premium tone, precise and professional. Include: short intro, detailed process steps, benefits, and a small FAQ (3–5 questions). Keep the standard “Termin vereinbaren” CTA block at the bottom with buttons:
+- tel:+491637947079
+- https://wa.me/491637947079
+and show “ReifenDrive, Ludwig-Richter-Str. 13, 42429 Wuppertal” plus email “reifendrive@gmail.com”.
+
+3) IMAGE REPLACEMENT FOR THIS SERVICE
+Replace the image used for the “Felgen Instandsetzung” service card on the homepage with this image URL:
+https://i.imgur.com/IZqqFth.jpeg
+Also ensure the “Felgen Instandsetzung” detail page hero/featured image uses the same image URL. The image must be responsive, properly cropped, and consistent with other service visuals.
+
+4) TIRE BRANDS SECTION (Reifenwechsel page) – ADJUSTMENT
+Currently the Reifenwechsel detail page lists specific tire brands (e.g., Continental, Michelin, etc.). The customer wants a broader premium offering, so do ONE of the following (choose the better UX option):
+Option A (preferred): Keep a clean premium “Marken” section but do NOT list only a few brands. Instead present a short, elegant text-only statement like:
+“Wir führen eine breite Auswahl an Premium-Reifen führender Hersteller – je nach Saison und Verfügbarkeit.”
+Then show a compact, text-only grid with “Beispiele (Auswahl)” and include more premium brands (not exhaustive). Include at least:
+Continental, Michelin, Pirelli, Bridgestone, Goodyear, Dunlop, Hankook, Yokohama, Falken, Vredestein, Nokian Tyres, BFGoodrich, Cooper, Toyo, Nexen.
+Add a note: “Weitere Marken auf Anfrage.”
+Do NOT claim guaranteed stock, do NOT show prices.
+Option B: Remove the brand list entirely and replace with one short paragraph emphasizing “alle gängigen Premium-Marken” + “auf Anfrage/Verfügbarkeit”.
+Use whichever fits the page best, but ensure it clearly communicates that many premium brands are available.
+
+5) HOMEPAGE SERVICES LIST MUST REFLECT THIS CHANGE
+In the homepage “Leistungen” overview and any service list/summary, ensure the service is named “Felgen Instandsetzung” and the description reflects repair + paint + cleaning (not generic felgenservice).
+
+6) KEEP EXISTING RULES
+- No shopping cart/checkout
+- All service detail pages start at the top (no auto-scroll)
+- Keep the global “Termin vereinbaren” block on every service detail page with call + WhatsApp
+- Ensure all links work and npm run dev works
+
+DELIVERABLE:
+- Updated service naming, routing, and content for Felgen Instandsetzung
+- Updated images on homepage and detail page using https://i.imgur.com/IZqqFth.jpeg
+- Updated Reifenwechsel brands messaging to reflect broader premium brand availability (Option A or B)
+- Consistent premium design across the site

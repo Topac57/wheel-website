@@ -9,7 +9,7 @@ import Reifenwechsel from "@/pages/leistungen/Reifenwechsel";
 import Reifenmontage from "@/pages/leistungen/Reifenmontage";
 import Auswuchten from "@/pages/leistungen/Auswuchten";
 import BremssattelLackierung from "@/pages/leistungen/BremssattelLackierung";
-import Felgenservice from "@/pages/leistungen/Felgenservice";
+import FelgenInstandsetzung from "@/pages/leistungen/FelgenInstandsetzung";
 import ReifenAnVerkauf from "@/pages/leistungen/ReifenAnVerkauf";
 
 function Router() {
@@ -20,7 +20,7 @@ function Router() {
       <Route path="/leistungen/reifenmontage" component={Reifenmontage} />
       <Route path="/leistungen/auswuchten" component={Auswuchten} />
       <Route path="/leistungen/bremssattel-lackierung" component={BremssattelLackierung} />
-      <Route path="/leistungen/felgenservice" component={Felgenservice} />
+      <Route path="/leistungen/felgen-instandsetzung" component={FelgenInstandsetzung} />
       <Route path="/leistungen/reifen-an-verkauf" component={ReifenAnVerkauf} />
       <Route component={NotFound} />
     </Switch>
