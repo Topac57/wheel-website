@@ -11,6 +11,9 @@ import Auswuchten from "@/pages/leistungen/Auswuchten";
 import BremssattelLackierung from "@/pages/leistungen/BremssattelLackierung";
 import FelgenInstandsetzung from "@/pages/leistungen/FelgenInstandsetzung";
 import ReifenAnVerkauf from "@/pages/leistungen/ReifenAnVerkauf";
+import Impressum from "@/pages/Impressum";
+import Datenschutz from "@/pages/Datenschutz";
+import AGB from "@/pages/AGB";
 
 function Router() {
   return (
@@ -22,6 +25,9 @@ function Router() {
       <Route path="/leistungen/bremssattel-lackierung" component={BremssattelLackierung} />
       <Route path="/leistungen/felgen-instandsetzung" component={FelgenInstandsetzung} />
       <Route path="/leistungen/reifen-an-verkauf" component={ReifenAnVerkauf} />
+      <Route path="/impressum" component={Impressum} />
+      <Route path="/datenschutz" component={Datenschutz} />
+      <Route path="/agb" component={AGB} />
       <Route component={NotFound} />
     </Switch>
   );

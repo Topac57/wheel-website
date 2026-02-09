@@ -233,9 +233,9 @@ export function ServiceDetailLayout({
             <div>
               <h4 className="text-lg font-bold mb-4">Rechtliches</h4>
               <ul className="space-y-2 text-sm text-gray-500">
-                <li><a href="#" className="hover:text-primary transition-colors">Impressum</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Datenschutz</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">AGB</a></li>
+                <li><Link href="/impressum" className="hover:text-primary transition-colors">Impressum</Link></li>
+                <li><Link href="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link></li>
+                <li><Link href="/agb" className="hover:text-primary transition-colors">AGB</Link></li>
               </ul>
             </div>
             <div>
