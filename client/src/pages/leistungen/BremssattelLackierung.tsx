@@ -13,7 +13,7 @@ export default function BremssattelLackierung() {
         seoTitle="Bremssattel-Lackierung in Wuppertal"
         seoDescription="Bremssattel-Lackierung in Wuppertal"
         intro="Setzen Sie sportliche Akzente – professionelle Bremssattel-Lackierung in Ihrer Wunschfarbe."
-        heroImage="https://i.imgur.com/1WenJcY.jpeg"
+        heroImage="https://i.imgur.com/oQV4knw.jpeg"
         description="Farbige Bremssättel sind das i-Tüpfelchen für jeden Fahrzeug-Enthusiasten. Bei ReifenDrive lackieren wir Ihre Bremssättel in Ihrer Wunschfarbe – ob klassisches Rot, sportliches Gelb, dezentes Schwarz oder passend zur Fahrzeugfarbe. Wir arbeiten hitzebeständig und verwenden ausschließlich hochwertige Lacke, die den thermischen Belastungen standhalten."
         benefits={[
           "Individuelle Farbgestaltung nach Ihren Wünschen",

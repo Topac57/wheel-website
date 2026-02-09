@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, CheckCircle2 } from "lucide-react";
 import aboutLogo from "@assets/logo-taleb_1769854557829.png";
@@ -11,6 +12,18 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const { data: services, isLoading } = useServices();
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.slice(1);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen font-sans bg-background text-foreground pb-20 md:pb-0">
@@ -76,7 +89,7 @@ export default function Home() {
         </div>
       </section>
       {/* SERVICES SECTION */}
-      <section id="services" className="section-padding bg-slate-50">
+      <section id="leistungen" className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto container-padding">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

@@ -70,7 +70,7 @@ export function ServiceDetailLayout({
                 Startseite
               </Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/#services" className="hover:text-white transition-colors" data-testid="link-breadcrumb-services">
+              <Link href="/#leistungen" className="hover:text-white transition-colors" data-testid="link-breadcrumb-services">
                 Leistungen
               </Link>
               <ChevronRight className="w-4 h-4" />
@@ -212,7 +212,7 @@ export function ServiceDetailLayout({
               Zurück zur Startseite
             </Button>
           </Link>
-          <Link href="/#services" data-testid="link-all-services">
+          <Link href="/#leistungen" data-testid="link-all-services">
             <Button variant="ghost" className="gap-2 rounded-full text-primary">
               Alle Leistungen ansehen
             </Button>
