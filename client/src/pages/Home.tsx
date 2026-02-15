@@ -43,6 +43,7 @@ export default function Home() {
         </div>
 
         <div className="container-padding relative z-10 w-full max-w-7xl mx-auto pt-20">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,6 +86,34 @@ export default function Home() {
                   WhatsApp
                 </Button>
               </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="hidden lg:flex items-start justify-end"
+          >
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-5 shadow-lg border border-gray-100 max-w-[220px]" data-testid="badge-bestpreise">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2 h-2 bg-primary rounded-full" />
+                <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">Unser Versprechen</span>
+              </div>
+              <p className="text-lg font-bold text-black leading-snug">Reifendienst zu Bestpreisen</p>
+            </div>
+          </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="lg:hidden mt-6"
+          >
+            <div className="inline-flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-full px-5 py-3 shadow-md border border-gray-100" data-testid="badge-bestpreise-mobile">
+              <span className="w-2 h-2 bg-primary rounded-full" />
+              <span className="text-sm font-bold text-black">Reifendienst zu Bestpreisen</span>
             </div>
           </motion.div>
         </div>

@@ -75,6 +75,14 @@ export class DatabaseStorage implements IStorage {
         category: "sales",
         image: "https://i.imgur.com/P54z2O0.jpeg",
         slug: "reifen-an-verkauf"
+      },
+      {
+        title: "24/7 Pannendienst",
+        description: "Schnelle Hilfe bei Panne oder Notfall – direkt telefonisch erreichbar.",
+        icon: "PhoneCall",
+        category: "emergency",
+        image: null,
+        slug: "pannendienst-24-7"
       }
     ]);
   }

@@ -1,0 +1,26 @@
+Enhance the existing Reifenwerkstatt website (premium design, white background, black text, accent #38b000) by adding a new service “24/7 Pannendienst” and integrating it visually as an emergency-highlight without changing the overall brand.
+
+1) Add a new service card in the Leistungen section:
+- Title: “24/7 Pannendienst”
+- Short description (German): “Schnelle Hilfe bei Panne oder Notfall – direkt telefonisch erreichbar.”
+- Route/slug: /leistungen/pannendienst-24-7
+- The card must be visually highlighted using an amber/yellow accent (NOT replacing the main brand). Use a subtle amber background tint or gradient (e.g. amber-100 to amber-200), black text, and a small icon (hazard/phone). Do not copy ADAC branding; just use yellow as a universal emergency signal.
+
+2) Emergency CTA behavior:
+- The “24/7 Pannendienst” card must include a strong CTA button “Notfall anrufen” linking to tel:+491637947079.
+- Keep WhatsApp as secondary option where appropriate (https://wa.me/491637947079).
+
+3) Create the detail page /leistungen/pannendienst-24-7:
+- Start at the top (no auto-scroll).
+- Include: H1, premium intro, detailed explanation (what help is provided), typical situations, simple process steps, small FAQ (3–5), and at the bottom the standard “Termin vereinbaren / Direktkontakt” block with Call + WhatsApp and business info.
+- Keep styling consistent with other service pages, but allow a small amber highlight for “Notfall” elements.
+
+4) Add a small hero badge for value proposition:
+- In the main landing hero area, add a compact badge on the right side (desktop) and below headline (mobile) that says: “Reifendienst zu Bestpreisen”.
+- The badge must be subtle and premium (white background, thin border, black text, small #38b000 accent line or dot). Do not make it look cheap or overly salesy.
+
+5) Navigation/anchors:
+- Ensure the Leistungen section has id="leistungen" and header nav “Leistungen” scrolls there.
+- Keep overall site background pure white and brand accent #38b000 as primary; amber is only for the emergency service highlight.
+
+Deliverable: updated Leistungen grid with the new highlighted 24/7 Pannendienst card, new detail page route, and the hero badge “Reifendienst zu Bestpreisen”, with working links and consistent premium design.
