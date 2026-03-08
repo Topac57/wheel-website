@@ -18,15 +18,16 @@ export function Map() {
             <p>Ludwig-Richter-Str. 13</p>
             <p>42429 Wuppertal</p>
           </div>
-          <div className="pt-4 border-t border-gray-800">
+          <div className="pt-4 border-t border-gray-800" data-testid="text-opening-hours-footer">
             <p className="font-semibold text-white mb-2">Öffnungszeiten</p>
-            <div className="flex justify-between text-sm">
-              <span>Mo - Fr:</span>
-              <span>09:00 - 18:00 Uhr</span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span>Sa:</span>
-              <span>09:00 - 14:00 Uhr</span>
+            <div className="space-y-1 text-sm">
+              <div className="flex justify-between"><span>Montag</span><span>08:00 – 19:00 Uhr</span></div>
+              <div className="flex justify-between"><span>Dienstag</span><span>08:00 – 19:00 Uhr</span></div>
+              <div className="flex justify-between"><span>Mittwoch</span><span>08:00 – 19:00 Uhr</span></div>
+              <div className="flex justify-between"><span>Donnerstag</span><span>08:00 – 19:00 Uhr</span></div>
+              <div className="flex justify-between"><span>Freitag</span><span>15:30 – 19:00 Uhr</span></div>
+              <div className="flex justify-between"><span>Samstag</span><span>08:00 – 17:00 Uhr</span></div>
+              <div className="flex justify-between"><span>Sonntag</span><span className="text-gray-500">Geschlossen</span></div>
             </div>
           </div>
         </div>

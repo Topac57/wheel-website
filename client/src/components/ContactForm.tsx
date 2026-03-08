@@ -55,12 +55,16 @@ export function DirectContact() {
               <p>42429 Wuppertal</p>
             </div>
           </div>
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-3" data-testid="text-opening-hours-contact">
             <Clock className="h-5 w-5 text-primary mt-0.5 shrink-0" />
             <div>
-              <p className="font-medium text-white">Geschäftszeiten</p>
-              <p>Mo - Fr: 08:00 - 18:00</p>
-              <p>Sa: 09:00 - 14:00</p>
+              <p className="font-medium text-white mb-1">Geschäftszeiten</p>
+              <div className="space-y-0.5 text-sm">
+                <p>Mo – Do: 08:00 – 19:00</p>
+                <p>Fr: 15:30 – 19:00</p>
+                <p>Sa: 08:00 – 17:00</p>
+                <p className="text-gray-500">So: Geschlossen</p>
+              </div>
             </div>
           </div>
         </div>
