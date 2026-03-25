@@ -12,7 +12,7 @@ export function Map() {
         <div className="space-y-4 text-gray-300">
           <div>
             <p className="font-semibold text-white">Taha Taleb</p>
-            <p>Premium Reifen- & Felgenservice</p>
+            <p>Premium Reifen- & Felgen Smartrepair</p>
           </div>
           <div>
             <p>Ludwig-Richter-Str. 13</p>
@@ -21,12 +21,8 @@ export function Map() {
           <div className="pt-4 border-t border-gray-800" data-testid="text-opening-hours-footer">
             <p className="font-semibold text-white mb-2">Öffnungszeiten</p>
             <div className="space-y-1 text-sm">
-              <div className="flex justify-between"><span>Montag</span><span>08:00 – 19:00 Uhr</span></div>
-              <div className="flex justify-between"><span>Dienstag</span><span>08:00 – 19:00 Uhr</span></div>
-              <div className="flex justify-between"><span>Mittwoch</span><span>08:00 – 19:00 Uhr</span></div>
-              <div className="flex justify-between"><span>Donnerstag</span><span>08:00 – 19:00 Uhr</span></div>
-              <div className="flex justify-between"><span>Freitag</span><span>15:30 – 19:00 Uhr</span></div>
-              <div className="flex justify-between"><span>Samstag</span><span>08:00 – 17:00 Uhr</span></div>
+              <div className="flex justify-between"><span>Montag – Freitag</span><span>09:00 – 18:00 Uhr</span></div>
+              <div className="flex justify-between"><span>Samstag</span><span>09:00 – 15:00 Uhr</span></div>
               <div className="flex justify-between"><span>Sonntag</span><span className="text-gray-500">Geschlossen</span></div>
             </div>
           </div>
