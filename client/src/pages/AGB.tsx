@@ -36,7 +36,7 @@ export default function AGB() {
               <section>
                 <h2 className="text-xl font-bold text-black mb-3">2. Leistungen</h2>
                 <p>
-                  Das Leistungsangebot umfasst insbesondere Reifenwechsel (Sommer-, Winter- und Allwetterreifen), Reifenmontage, Reifen auswuchten, Optische Aufbereitung von Bremssätteln, Felgen Smartrepair sowie den An- und Verkauf von Reifen.
+                  Das Leistungsangebot umfasst insbesondere Reifenwechsel (Sommer-, Winter- und Allwetterreifen), Reifenmontage, Reifen auswuchten, Bremssattel-Lackierung, Felgen-Instandsetzung sowie den An- und Verkauf von Reifen.
                 </p>
               </section>
 

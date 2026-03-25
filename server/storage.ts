@@ -53,16 +53,16 @@ export class DatabaseStorage implements IStorage {
         slug: "auswuchten"
       },
       {
-        title: "Optische Aufbereitung von Bremssätteln",
-        description: "Farbliche Veredelung Ihrer Bremssättel für einen hochwertigen, sportlichen Look – Bearbeitung am selben Tag möglich.",
+        title: "Bremssattel-Lackierung",
+        description: "Individuelle Farbgestaltung Ihrer Bremssättel für einen sportlichen Look.",
         icon: "Paintbrush",
         category: "custom",
         image: "https://i.imgur.com/oQV4knw.jpeg",
         slug: "bremssattel-lackierung"
       },
       {
-        title: "Felgen Smartrepair",
-        description: "Professionelle Aufbereitung und Lackierung Ihrer Felgen – von Bordsteinschäden bis zur präzisen Farbtonanpassung.",
+        title: "Felgen Instandsetzung",
+        description: "Professionelle Reparatur, Lackierung und Aufbereitung Ihrer Felgen – von Bordsteinschäden bis zur Farbtonanpassung.",
         icon: "Disc",
         category: "rim",
         image: "https://i.imgur.com/IZqqFth.jpeg",

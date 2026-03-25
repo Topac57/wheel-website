@@ -60,8 +60,9 @@ export function DirectContact() {
             <div>
               <p className="font-medium text-white mb-1">Geschäftszeiten</p>
               <div className="space-y-0.5 text-sm">
-                <p>Mo – Fr: 09:00 – 18:00</p>
-                <p>Sa: 09:00 – 15:00</p>
+                <p>Mo – Do: 08:00 – 19:00</p>
+                <p>Fr: 15:30 – 19:00</p>
+                <p>Sa: 08:00 – 17:00</p>
                 <p className="text-gray-500">So: Geschlossen</p>
               </div>
             </div>
