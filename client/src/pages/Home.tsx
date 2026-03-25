@@ -58,13 +58,13 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-[1.1] mb-6">
               Premium Reifen- & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-400">
-                Felgen Smartrepair in Wuppertal
+                Felgenservice in Wuppertal
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-lg">
-              Ihr Premium Reifen- & Felgen Smartrepair in Wuppertal. 
-              Fachgerechte Montage und Pflege für höchste Ansprüche.
+              Ihr Premium Reifen- & Felgenservice in Wuppertal. 
+              Fachgerechte Montage, Einlagerung und Pflege für höchste Ansprüche.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

@@ -2,7 +2,7 @@
 
 ## Overview
 
-ReifenDrive is a premium one-page website (with service detail sub-pages) for a tire and rim service business located in Wuppertal, Germany. The business is owned by Taha Taleb and offers services like tire changes, mounting, balancing, cosmetic brake caliper preparation (Optische Aufbereitung von Bremssätteln), Felgen Smartrepair, tire buying/selling, and 24/7 emergency roadside assistance.
+ReifenDrive is a premium one-page website (with service detail sub-pages) for a tire and rim service business located in Wuppertal, Germany. The business is owned by Taha Taleb and offers services like tire changes, mounting, balancing, brake caliper painting, rim service, and tire buying/selling.
 
 The primary goal of the website is to drive phone calls and WhatsApp contacts. It features a mobile-first, premium design with SEO optimization for local search in German. The site is a React SPA with an Express backend and PostgreSQL database.
 
@@ -26,7 +26,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Page Structure
 - **Home page** (`/`): One-page layout with Hero, Services grid, About, Contact (direct call/WhatsApp cards), and embedded Google Map
-- **Service detail pages** (`/leistungen/*`): 7 individual pages using a shared `ServiceDetailLayout` component — Reifenwechsel, Reifenmontage, Auswuchten, Optische Aufbereitung von Bremssätteln (route: bremssattel-lackierung), Felgen Smartrepair (route: felgen-instandsetzung), Reifen-An-Verkauf, 24/7 Pannendienst
+- **Service detail pages** (`/leistungen/*`): 6 individual pages using a shared `ServiceDetailLayout` component — Reifenwechsel, Reifenmontage, Auswuchten, Bremssattel-Lackierung, Felgenservice, Reifen-An-Verkauf
 - **404 page**: Simple not-found component
 - **Floating actions**: WhatsApp button (desktop) and sticky bottom contact bar (mobile) on all pages
 

@@ -5,47 +5,46 @@ export default function BremssattelLackierung() {
   return (
     <>
       <SEO
-        title="Optische Aufbereitung von Bremssätteln in Wuppertal | ReifenDrive – Taha Taleb"
-        description="Optische Aufbereitung von Bremssätteln in Wuppertal – farbliche Veredelung für eine sportliche Fahrzeugoptik. Bearbeitung am selben Tag möglich. ReifenDrive – Taha Taleb."
+        title="Bremssattel-Lackierung in Wuppertal | ReifenDrive – Taha Taleb"
+        description="Professionelle Bremssattel-Lackierung in Wuppertal. Individuelle Farben für einen sportlichen Look. ReifenDrive – Taha Taleb."
       />
       <ServiceDetailLayout
-        title="Optische Aufbereitung von Bremssätteln"
-        seoTitle="Optische Aufbereitung von Bremssätteln in Wuppertal"
-        seoDescription="Optische Aufbereitung von Bremssätteln zur Verbesserung der Fahrzeugoptik in Wuppertal"
-        intro="Verleihen Sie Ihrem Fahrzeug einen sportlichen, individuellen Look – durch professionelle farbliche Veredelung der Bremssättel."
+        title="Bremssattel-Lackierung"
+        seoTitle="Bremssattel-Lackierung in Wuppertal"
+        seoDescription="Bremssattel-Lackierung in Wuppertal"
+        intro="Setzen Sie sportliche Akzente – professionelle Bremssattel-Lackierung in Ihrer Wunschfarbe."
         heroImage="https://i.imgur.com/oQV4knw.jpeg"
-        description="Optische Aufbereitung von Bremssätteln zur Verbesserung der Fahrzeugoptik – inklusive Reinigung und farblicher Veredelung. Ob klassisches Rot, sportliches Gelb, dezentes Schwarz oder ein individueller Farbton passend zu Ihrem Fahrzeug – wir gestalten die Bremssättel nach Ihren Wünschen. Das Ergebnis: ein hochwertiges, gepflegtes Erscheinungsbild, das durch die Felgen hindurch sofort ins Auge fällt. Bearbeitung am selben Tag möglich."
+        description="Farbige Bremssättel sind das i-Tüpfelchen für jeden Fahrzeug-Enthusiasten. Bei ReifenDrive lackieren wir Ihre Bremssättel in Ihrer Wunschfarbe – ob klassisches Rot, sportliches Gelb, dezentes Schwarz oder passend zur Fahrzeugfarbe. Wir arbeiten hitzebeständig und verwenden ausschließlich hochwertige Lacke, die den thermischen Belastungen standhalten."
         benefits={[
           "Individuelle Farbgestaltung nach Ihren Wünschen",
-          "Optische Aufwertung und sportlicher Look für Ihr Fahrzeug",
-          "Inklusive gründlicher Reinigung und Vorbereitung der Oberfläche",
-          "Bearbeitung am selben Tag möglich",
-          "Hochwertige Ausführung mit sorgfältiger Abdeckung aller Bauteile",
-          "Professionelles Finish für einen langlebigen, ansprechenden Look"
+          "Hitzebeständige Speziallacke für maximale Haltbarkeit",
+          "Sportlicher, hochwertiger Look für Ihr Fahrzeug",
+          "Sorgfältige Vorbereitung und Abdeckung aller Bauteile",
+          "Professionelle Ausführung vom Fachmann"
         ]}
         process={[
-          "Beratung zur Farbauswahl und Abstimmung auf Ihr Fahrzeug",
-          "Gründliche Reinigung und Vorbereitung der Oberfläche",
-          "Sorgfältiges Abkleben aller angrenzenden Bauteile",
-          "Farbliche Veredelung in mehreren sorgfältigen Schichten",
-          "Trocknung, Endkontrolle und Übergabe am selben Tag"
+          "Beratung zur Farbauswahl und Abstimmung mit dem Fahrzeug",
+          "Demontage der Räder und Reinigung der Bremssättel",
+          "Abkleben und Vorbereitung der Oberfläche",
+          "Auftragen des hitzebeständigen Speziallacks in mehreren Schichten",
+          "Trocknung, Montage und Endkontrolle"
         ]}
         faq={[
           {
             question: "Welche Farben stehen zur Auswahl?",
-            answer: "Grundsätzlich sind alle Farben möglich – von Rot, Gelb, Blau über Schwarz bis hin zu individuellen Tönen passend zu Ihrem Fahrzeug. Kontaktieren Sie uns für eine persönliche Beratung."
+            answer: "Grundsätzlich sind alle Farben möglich – von Rot, Gelb, Blau über Schwarz bis hin zu individuellen Tönen passend zu Ihrem Fahrzeug. Kontaktieren Sie uns für eine Beratung."
           },
           {
-            question: "Kann die Aufbereitung noch am selben Tag abgeholt werden?",
-            answer: "Ja, in der Regel ist die Bearbeitung am selben Tag möglich. Wir informieren Sie bei der Terminvereinbarung über den genauen Zeitrahmen."
+            question: "Hält die Lackierung der Hitze stand?",
+            answer: "Ja, wir verwenden ausschließlich hitzebeständige Speziallacke, die für die hohen Temperaturen an der Bremse ausgelegt sind."
           },
           {
-            question: "Wie lange hält die Farbveredelung?",
-            answer: "Bei sachgemäßer Pflege hält die Farbveredelung langfristig und behält ihr ansprechendes Erscheinungsbild. Wir informieren Sie gerne über die richtige Pflege."
+            question: "Wie lange dauert die Bremssattel-Lackierung?",
+            answer: "Je nach Aufwand und Trocknungszeit sollten Sie mit 1–2 Tagen rechnen. Wir informieren Sie vorab über den genauen Zeitrahmen."
           },
           {
-            question: "Muss das Fahrzeug dafür länger abgegeben werden?",
-            answer: "In der Regel nicht – die Aufbereitung ist in den meisten Fällen taggleich abgeschlossen. Sprechen Sie uns einfach an und wir stimmen den Ablauf gemeinsam ab."
+            question: "Müssen die Bremssättel dafür ausgebaut werden?",
+            answer: "In den meisten Fällen werden die Räder demontiert und die Bremssättel im eingebauten Zustand sorgfältig abgeklebt und lackiert."
           }
         ]}
       />
