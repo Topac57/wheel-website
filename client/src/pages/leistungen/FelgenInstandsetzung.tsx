@@ -5,16 +5,16 @@ export default function FelgenInstandsetzung() {
   return (
     <>
       <SEO
-        title="Felgen Instandsetzung in Wuppertal – Reparatur & Lackierung | ReifenDrive"
-        description="Professionelle Felgen Instandsetzung in Wuppertal: Bordsteinschäden reparieren, Felgen lackieren und aufbereiten. ReifenDrive – Taha Taleb."
+        title="Felgen Smartrepair in Wuppertal – Reparatur & Aufbereitung | ReifenDrive"
+        description="Professioneller Felgen Smartrepair in Wuppertal: Bordsteinschäden reparieren, Felgen lackieren und aufbereiten. ReifenDrive – Taha Taleb."
       />
       <ServiceDetailLayout
-        title="Felgen Instandsetzung"
-        seoTitle="Felgen Instandsetzung in Wuppertal"
-        seoDescription="Professionelle Felgen Instandsetzung in Wuppertal"
+        title="Felgen Smartrepair"
+        seoTitle="Felgen Smartrepair in Wuppertal"
+        seoDescription="Professioneller Felgen Smartrepair in Wuppertal"
         intro="Bordsteinschäden, Kratzer oder abgeplatzte Farbe? Wir setzen Ihre Felgen professionell instand – präzise, farbgetreu und mit perfektem Finish."
         heroImage="https://i.imgur.com/IZqqFth.jpeg"
-        description="Beschädigte Felgen sind nicht nur ein optischer Makel, sondern können auch die Sicherheit beeinträchtigen. Bei ReifenDrive bieten wir eine umfassende Felgen Instandsetzung an: Von der Reparatur typischer Bordsteinschäden über die Beseitigung von Kratzern und Dellen bis hin zur professionellen Neulackierung in der passenden Felgenfarbe. Wir arbeiten mit präziser Farbtonanpassung, damit Ihre Felgen nach der Instandsetzung wieder wie neu aussehen. Auch größere Beschädigungen setzen wir – soweit technisch möglich – fachgerecht instand."
+        description="Beschädigte Felgen sind nicht nur ein optischer Makel, sondern können auch die Sicherheit beeinträchtigen. Bei ReifenDrive bieten wir einen umfassenden Felgen Smartrepair an: Von der Reparatur typischer Bordsteinschäden über die Beseitigung von Kratzern und Dellen bis hin zur professionellen Neulackierung in der passenden Felgenfarbe. Wir arbeiten mit präziser Farbtonanpassung, damit Ihre Felgen nach dem Smartrepair wieder wie neu aussehen. Auch größere Beschädigungen setzen wir – soweit technisch möglich – fachgerecht instand."
         benefits={[
           "Fachgerechte Reparatur von Bordsteinschäden und Kratzern",
           "Instandsetzung auch größerer Beschädigungen (soweit möglich)",
@@ -40,15 +40,15 @@ export default function FelgenInstandsetzung() {
             answer: "Ja, wir führen eine präzise Farbtonanpassung durch, damit die reparierte Stelle optisch nicht mehr von der Originaloberfläche zu unterscheiden ist."
           },
           {
-            question: "Wie lange dauert eine Felgen Instandsetzung?",
-            answer: "Je nach Umfang des Schadens dauert die Instandsetzung in der Regel 1–2 Arbeitstage. Wir informieren Sie vorab über den genauen Zeitrahmen."
+            question: "Wie lange dauert ein Felgen Smartrepair?",
+            answer: "Je nach Umfang des Schadens dauert der Smartrepair in der Regel 1–2 Arbeitstage. Wir informieren Sie vorab über den genauen Zeitrahmen."
           },
           {
             question: "Können auch Alufelgen repariert werden?",
             answer: "Ja, wir reparieren und lackieren sowohl Alufelgen als auch Stahlfelgen und Schmiedefelgen. Senden Sie uns gerne Bilder per WhatsApp für eine Vorab-Einschätzung."
           },
           {
-            question: "Was kostet die Felgen Instandsetzung?",
+            question: "Was kostet der Felgen Smartrepair?",
             answer: "Die Kosten richten sich nach Art und Umfang der Beschädigung. Kontaktieren Sie uns per Telefon oder WhatsApp für eine individuelle Einschätzung."
           }
         ]}

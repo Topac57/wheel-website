@@ -59,7 +59,7 @@ export default function Reifenwechsel() {
         seoDescription="Professioneller Reifenwechsel in Wuppertal"
         intro="Saisonaler Reifenwechsel vom Profi – schnell, sicher und schonend für Ihr Fahrzeug."
         heroImage="https://i.imgur.com/KYSBCNi.jpeg"
-        description="Der regelmäßige Reifenwechsel ist essenziell für Ihre Sicherheit und die Langlebigkeit Ihrer Reifen. Bei ReifenDrive sorgen wir dafür, dass Ihr Fahrzeug zu jeder Jahreszeit optimal bereift ist. Ob Sommerreifen für trockene Straßen, Winterreifen für Eis und Schnee oder Allwetterreifen für ganzjährigen Komfort – wir beraten Sie individuell und montieren fachgerecht."
+        description="Der regelmäßige Reifenwechsel ist essenziell für Ihre Sicherheit und die Langlebigkeit Ihrer Reifen. Bei ReifenDrive sorgen wir dafür, dass Ihr Fahrzeug zu jeder Jahreszeit optimal bereift ist. Ob Sommerreifen für trockene Straßen, Winterreifen für Eis und Schnee oder Allwetterreifen für ganzjährigen Komfort – wir beraten Sie individuell und montieren fachgerecht. Auch für Kunden mit kleinerem Budget bieten wir passende und zuverlässige Lösungen an."
         benefits={[
           "Maximale Sicherheit zu jeder Jahreszeit",
           "Optimale Bremsleistung und Straßenhaftung",
