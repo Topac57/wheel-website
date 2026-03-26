@@ -180,7 +180,7 @@ export default function Home() {
             <ul className="space-y-4">
               {[
                 "Modernste Wucht- & Montagemaschinen",
-                "Spezialisiert auf Runflat & UHP Reifen",
+                "Hochwertige Reifen für jedes Fahrzeug",
                 "Felgenschonende Montage",
                 "Express-Service ohne lange Wartezeiten"
               ].map((item, i) => (
