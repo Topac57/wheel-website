@@ -59,8 +59,9 @@ export function DirectContact() {
             <Clock className="h-5 w-5 text-primary mt-0.5 shrink-0" />
             <div>
               <p className="font-medium text-white">Geschäftszeiten</p>
-              <p>Mo - Fr: 08:00 - 18:00</p>
-              <p>Sa: 09:00 - 14:00</p>
+              <p>Mo – Fr: 09:00 – 18:00</p>
+              <p>Sa: 09:00 – 15:00</p>
+              <p>So: Geschlossen</p>
             </div>
           </div>
         </div>

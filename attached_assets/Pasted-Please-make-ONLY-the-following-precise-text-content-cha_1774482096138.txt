@@ -1,0 +1,53 @@
+Please make ONLY the following precise text/content changes. Do not rename or rewrite unrelated headings, sections, routes, or layouts.
+
+1) HERO / LANDINGPAGE TEXT
+- Do NOT change the main hero headline / main landing page heading.
+- Keep the existing headline exactly as it is.
+- Only update the smaller subtitle / supporting text below the hero headline.
+- In that subtitle, remove the word “Einlagerung” completely.
+- Rewrite the subtitle so it still sounds natural, premium, and SEO-friendly for a Reifenservice in Wuppertal.
+- Keep the current tone and structure as close as possible to the existing text, just without “Einlagerung”.
+
+2) OPENING HOURS
+Update the opening hours everywhere they appear on the website to:
+- Montag – Freitag: 09:00 – 18:00
+- Samstag: 09:00 – 15:00
+- Sonntag: Geschlossen
+
+Apply this consistently in:
+- contact section
+- footer
+- business info blocks
+- any structured business data if used
+
+3) SERVICE CARD / SERVICE NAMING
+In the Leistungen / Services section:
+- Change “Felgen Instandsetzung” to “Felgen Smart Repair”
+
+4) FELGEN SMART REPAIR DESCRIPTION
+For the short description below “Felgen Smart Repair”, use this wording:
+- “Professionelle Reparatur und optische Aufbereitung Ihrer Felgen.”
+
+Important:
+- Remove the word “Lackierung” wherever it appears in relation to this service
+- Do not use the word “Lackierung” in the service card, detail page, metadata, or related descriptive text for this service
+- Use only legally safer wording like:
+  - optische Aufbereitung
+  - farbliche Veredelung
+  - professionelle Reparatur
+- Do not imply meisterpflichtige Lackierarbeiten directly
+
+5) SCOPE CONTROL
+- Do not change the hero headline
+- Do not rename unrelated services
+- Do not redesign any section
+- Do not change routes/slugs unless absolutely required
+- Only make the text/content corrections described above
+
+After implementing, verify that:
+- the hero headline is unchanged
+- only the subtitle was adjusted
+- “Einlagerung” is removed from that hero subtitle
+- opening hours are updated everywhere
+- “Felgen Smart Repair” appears correctly in the Leistungen section
+- no “Lackierung” wording remains in relation to the Felgen Smart Repair service

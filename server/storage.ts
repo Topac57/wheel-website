@@ -30,7 +30,7 @@ export class DatabaseStorage implements IStorage {
     await db.insert(services).values([
       {
         title: "Reifenwechsel (Sommer / Winter / Allwetter)",
-        description: "Professioneller Radwechsel für maximale Sicherheit zu jeder Jahreszeit.",
+        description: "Professioneller Radwechsel für maximale Sicherheit zu jeder Jahreszeit. Auch für Kunden mit kleinerem Budget bieten wir passende und zuverlässige Lösungen an.",
         icon: "RefreshCw",
         category: "tire",
         image: "https://i.imgur.com/KYSBCNi.jpeg",
@@ -53,16 +53,16 @@ export class DatabaseStorage implements IStorage {
         slug: "auswuchten"
       },
       {
-        title: "Bremssattel-Lackierung",
-        description: "Individuelle Farbgestaltung Ihrer Bremssättel für einen sportlichen Look.",
+        title: "Optische Aufbereitung von Bremssätteln",
+        description: "Individuelle optische Aufbereitung und farbliche Veredelung Ihrer Bremssättel – Bearbeitung am selben Tag möglich.",
         icon: "Paintbrush",
         category: "custom",
         image: "https://i.imgur.com/oQV4knw.jpeg",
         slug: "bremssattel-lackierung"
       },
       {
-        title: "Felgen Instandsetzung",
-        description: "Professionelle Reparatur, Lackierung und Aufbereitung Ihrer Felgen – von Bordsteinschäden bis zur Farbtonanpassung.",
+        title: "Felgen Smart Repair",
+        description: "Professionelle Reparatur und optische Aufbereitung Ihrer Felgen – von Bordsteinschäden bis zur farblichen Veredelung.",
         icon: "Disc",
         category: "rim",
         image: "https://i.imgur.com/IZqqFth.jpeg",

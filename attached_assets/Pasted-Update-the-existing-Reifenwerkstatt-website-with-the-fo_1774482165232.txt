@@ -1,0 +1,101 @@
+Update the existing Reifenwerkstatt website with the following precise corrections. Do NOT modify layout, structure, or unrelated content. Keep the premium design (white background, black text, accent #38b000).
+
+IMPORTANT: Only change what is explicitly described below.
+
+1) HERO / LANDINGPAGE TEXT (VERY IMPORTANT)
+- Do NOT change the main headline (H1) on the landing page under any circumstances.
+- Keep the headline exactly as it is.
+- Only modify the subtitle / supporting text below the headline.
+- In this subtitle:
+  - Remove the word “Einlagerung” completely
+  - Rewrite the sentence so it still sounds natural, premium, and SEO-friendly
+  - Keep the original tone and structure as close as possible
+  - Do not shorten it too much, just remove “Einlagerung” and adjust the wording cleanly
+
+2) OPENING HOURS UPDATE
+Replace the opening hours everywhere on the website with:
+
+Montag – Freitag: 09:00 – 18:00  
+Samstag: 09:00 – 15:00  
+Sonntag: Geschlossen  
+
+Apply this consistently in:
+- contact section
+- footer
+- business info blocks
+- structured data (if present)
+
+3) REMOVE “EINLAGERUNG” COMPLETELY
+- Ensure the word “Einlagerung” does not appear anywhere:
+  - homepage
+  - service cards
+  - service detail pages
+  - meta titles/descriptions
+  - alt texts
+  - structured data
+- Do not leave broken or unnatural sentences after removal
+
+4) SERVICE RENAMING (FELGEN)
+- In the Leistungen section:
+  - Replace “Felgen Instandsetzung” or “Felgenservice” with:
+    “Felgen Smart Repair”
+- Update:
+  - service card title
+  - detail page title
+  - any references across the site
+- Keep route/slugs unchanged unless required
+
+5) FELGEN SMART REPAIR TEXT (LEGAL SAFE)
+- Update the description under this service to:
+  “Professionelle Reparatur und optische Aufbereitung Ihrer Felgen.”
+- IMPORTANT:
+  - Remove the word “Lackierung” everywhere related to this service
+  - Do NOT use “Lackierung” in any form (card, detail page, SEO, alt text)
+  - Replace with safe wording like:
+    - optische Aufbereitung
+    - farbliche Veredelung
+    - professionelle Reparatur
+  - Do NOT imply meisterpflichtige Lackierarbeiten
+
+6) BREMSSATTEL SERVICE (LEGAL SAFE ADJUSTMENT)
+- Replace “Bremssattel-Lackierung” everywhere with:
+  “Optische Aufbereitung von Bremssätteln”
+- Update:
+  - service card title
+  - detail page title
+  - SEO/meta
+  - AGB references
+- Rewrite description to be purely cosmetic:
+  - focus on appearance, cleaning, visual enhancement
+  - no wording about technical brake system repair
+
+7) SAME-DAY BENEFIT (KEEP)
+- Add or keep:
+  “Bearbeitung am selben Tag möglich”
+- Show it:
+  - on the Bremssattel detail page (as benefit)
+  - on the homepage service card (small subtle highlight)
+
+8) REIFENWECHSEL TEXT UPDATE
+- Add naturally into the description:
+  “Auch für Kunden mit kleinerem Budget bieten wir passende und zuverlässige Lösungen an.”
+- Keep tone premium, not cheap or discount-focused
+
+9) CONSISTENCY CHECK
+Ensure:
+- Homepage service card titles match detail page titles exactly
+- No old naming remains anywhere
+- No “Lackierung” appears in restricted services
+- No “Einlagerung” appears anywhere
+- Navigation and routes still work
+- Mobile layout is unchanged
+
+DELIVERABLE:
+- Hero headline unchanged, subtitle corrected
+- Opening hours updated everywhere
+- “Einlagerung” removed globally
+- “Felgen Smart Repair” implemented with legal-safe wording
+- Bremssattel service renamed and legally safe
+- Same-day benefit visible
+- Reifenwechsel text updated
+- No layout or routing issues

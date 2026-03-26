@@ -26,7 +26,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Page Structure
 - **Home page** (`/`): One-page layout with Hero, Services grid, About, Contact (direct call/WhatsApp cards), and embedded Google Map
-- **Service detail pages** (`/leistungen/*`): 6 individual pages using a shared `ServiceDetailLayout` component — Reifenwechsel, Reifenmontage, Auswuchten, Bremssattel-Lackierung, Felgenservice, Reifen-An-Verkauf
+- **Service detail pages** (`/leistungen/*`): 7 individual pages using a shared `ServiceDetailLayout` component — Reifenwechsel, Reifenmontage, Auswuchten, Optische Aufbereitung von Bremssätteln (slug: bremssattel-lackierung), Felgen Smart Repair (slug: felgen-instandsetzung), Reifen-An-Verkauf, Pannendienst-24-7
 - **404 page**: Simple not-found component
 - **Floating actions**: WhatsApp button (desktop) and sticky bottom contact bar (mobile) on all pages
 

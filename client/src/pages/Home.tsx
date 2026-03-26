@@ -64,7 +64,7 @@ export default function Home() {
             
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-lg">
               Ihr Premium Reifen- & Felgenservice in Wuppertal. 
-              Fachgerechte Montage, Einlagerung und Pflege für höchste Ansprüche.
+              Fachgerechte Montage, Auswuchten und Reifenpflege für höchste Ansprüche.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
