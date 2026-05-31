@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { FloatingActions } from "@/components/FloatingActions";
 import { SEO } from "@/components/SEO";
+import { CodionFooterCredit } from "@/components/CodionFooterCredit";
 
 export default function Datenschutz() {
   useEffect(() => {
@@ -135,6 +136,7 @@ export default function Datenschutz() {
             <div className="pt-8 border-t border-white/10 text-center text-sm text-gray-600">
               &copy; {new Date().getFullYear()} ReifenDrive - Taha Taleb. Alle Rechte vorbehalten.
             </div>
+            <CodionFooterCredit />
           </div>
         </footer>
       </div>

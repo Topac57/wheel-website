@@ -8,6 +8,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ContactForm } from "@/components/ContactForm";
 import { Map } from "@/components/Map";
 import { FloatingActions } from "@/components/FloatingActions";
+import { CodionFooterCredit } from "@/components/CodionFooterCredit";
 import { useServices } from "@/hooks/use-services";
 import { Button } from "@/components/ui/button";
 
@@ -277,6 +278,7 @@ export default function Home() {
           <div className="pt-8 border-t border-white/10 text-center text-sm text-gray-600">
             &copy; {new Date().getFullYear()} ReifenDrive - Taha Taleb. Alle Rechte vorbehalten.
           </div>
+          <CodionFooterCredit />
         </div>
       </footer>
     </div>

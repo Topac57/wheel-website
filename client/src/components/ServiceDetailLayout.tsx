@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 import { FloatingActions } from "@/components/FloatingActions";
+import { CodionFooterCredit } from "@/components/CodionFooterCredit";
 
 interface FAQItem {
   question: string;
@@ -250,6 +251,7 @@ export function ServiceDetailLayout({
           <div className="pt-8 border-t border-white/10 text-center text-sm text-gray-600">
             &copy; {new Date().getFullYear()} ReifenDrive - Taha Taleb. Alle Rechte vorbehalten.
           </div>
+          <CodionFooterCredit />
         </div>
       </footer>
     </div>
