@@ -1,49 +1,49 @@
-import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/Home";
-import Reifenwechsel from "@/pages/leistungen/Reifenwechsel";
-import Reifenmontage from "@/pages/leistungen/Reifenmontage";
-import Auswuchten from "@/pages/leistungen/Auswuchten";
-import BremssattelLackierung from "@/pages/leistungen/BremssattelLackierung";
-import FelgenInstandsetzung from "@/pages/leistungen/FelgenInstandsetzung";
-import ReifenAnVerkauf from "@/pages/leistungen/ReifenAnVerkauf";
-import Pannendienst from "@/pages/leistungen/Pannendienst";
-import Impressum from "@/pages/Impressum";
-import Datenschutz from "@/pages/Datenschutz";
-import AGB from "@/pages/AGB";
+import { useEffect, useState, type ComponentType } from "react";
+import { Router, useLocation } from "wouter";
+import { loadPage, normalizePath } from "@/pages/registry";
+import { RouteMeta } from "@/components/RouteMeta";
 
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/leistungen/reifenwechsel" component={Reifenwechsel} />
-      <Route path="/leistungen/reifenmontage" component={Reifenmontage} />
-      <Route path="/leistungen/auswuchten" component={Auswuchten} />
-      <Route path="/leistungen/bremssattel-lackierung" component={BremssattelLackierung} />
-      <Route path="/leistungen/felgen-instandsetzung" component={FelgenInstandsetzung} />
-      <Route path="/leistungen/reifen-an-verkauf" component={ReifenAnVerkauf} />
-      <Route path="/leistungen/pannendienst-24-7" component={Pannendienst} />
-      <Route path="/impressum" component={Impressum} />
-      <Route path="/datenschutz" component={Datenschutz} />
-      <Route path="/agb" component={AGB} />
-      <Route component={NotFound} />
-    </Switch>
-  );
+interface AppProps {
+  /** Nur beim Vorrendern gesetzt: der Pfad, für den die Seite erzeugt wird. */
+  ssrPath?: string;
+  /** Die Seitenkomponente für den Startpfad — beim Vorrendern statisch, im
+   *  Browser bereits vor `hydrateRoot` nachgeladen. Dadurch rendert der erste
+   *  Client-Durchlauf exakt dasselbe wie der Server: keine Hydration-Warnung,
+   *  kein Aufflackern eines Ladezustands. */
+  initialPath: string;
+  initialComponent: ComponentType;
 }
 
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Router />
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+function PageHost({ initialPath, initialComponent }: Omit<AppProps, "ssrPath">) {
+  const [location] = useLocation();
+  const path = normalizePath(location);
+  const [page, setPage] = useState({ path: normalizePath(initialPath), Component: initialComponent });
+
+  useEffect(() => {
+    if (path === page.path) return;
+
+    let cancelled = false;
+    loadPage(path).then((Component) => {
+      if (cancelled) return;
+      setPage({ path, Component });
+      window.scrollTo(0, 0);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [path, page.path]);
+
+  // Bis der Chunk der Zielseite da ist, bleibt die alte Seite stehen. Das ist
+  // ruhiger als ein Leerzustand und dauert bei diesen Chunkgrößen kaum messbar.
+  const { Component } = page;
+  return <Component />;
 }
 
-export default App;
+export default function App({ ssrPath, initialPath, initialComponent }: AppProps) {
+  return (
+    <Router ssrPath={ssrPath}>
+      <RouteMeta />
+      <PageHost initialPath={initialPath} initialComponent={initialComponent} />
+    </Router>
+  );
+}

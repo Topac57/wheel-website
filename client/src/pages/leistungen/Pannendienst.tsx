@@ -1,19 +1,10 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
 import { Phone, MessageCircle, ChevronLeft, ChevronRight, AlertTriangle, Clock, MapPin } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Navbar } from "@/components/Navbar";
-import { FloatingActions } from "@/components/FloatingActions";
-import { SEO } from "@/components/SEO";
-import { CodionFooterCredit } from "@/components/CodionFooterCredit";
+import { PageShell } from "@/components/PageShell";
 
 export default function Pannendienst() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const faq = [
     {
       question: "Wann ist der Pannendienst erreichbar?",
@@ -38,24 +29,13 @@ export default function Pannendienst() {
   ];
 
   return (
-    <>
-      <SEO
-        title="24/7 Pannendienst in Wuppertal – Reifenpanne Soforthilfe | ReifenDrive"
-        description="Reifenpanne? ReifenDrive bietet 24/7 Pannendienst in Wuppertal. Schnelle Hilfe bei Reifenschäden, platten Reifen und Felgenproblemen. Jetzt anrufen!"
-      />
-      <div className="min-h-screen font-sans bg-background text-foreground pb-20 md:pb-0">
-        <Navbar />
-        <FloatingActions />
+    <PageShell>
 
         <section className="relative pt-32 pb-20 overflow-hidden">
           <div className="absolute inset-0 z-0 bg-gradient-to-br from-amber-100 via-amber-50 to-white" />
 
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <div>
               <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8 flex-wrap" data-testid="breadcrumb">
                 <Link href="/" className="hover:text-black transition-colors" data-testid="link-breadcrumb-home">
                   Startseite
@@ -99,18 +79,13 @@ export default function Pannendienst() {
                   </Button>
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="space-y-12"
-            >
+            <div>
               <div>
                 <h2 className="text-3xl font-bold mb-6">Schnelle Hilfe, wenn es darauf ankommt</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -173,17 +148,13 @@ export default function Pannendienst() {
                   <p className="text-sm text-muted-foreground">Schnelle Hilfe vor Ort oder telefonisch</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         <section className="py-16 bg-slate-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h2 className="text-3xl font-bold mb-8">Häufige Fragen</h2>
               <div className="space-y-4">
                 {faq.map((item, i) => (
@@ -195,17 +166,13 @@ export default function Pannendienst() {
                   </Card>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <Card className="border-none shadow-xl overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800" />
                 <CardContent className="relative z-10 p-8 md:p-12 text-center">
@@ -236,14 +203,14 @@ export default function Pannendienst() {
 
                   <div className="text-gray-400 text-sm space-y-1">
                     <p className="font-medium text-white">ReifenDrive – Taha Taleb</p>
-                    <p>Ludwig-Richter-Str. 13, 42429 Wuppertal</p>
+                    <p>Ludwig-Richter-Str. 13A, 42329 Wuppertal</p>
                     <p>
                       <a href="mailto:reifendrive@gmail.com" className="transition-colors" data-testid="link-detail-email">reifendrive@gmail.com</a>
                     </p>
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -263,40 +230,6 @@ export default function Pannendienst() {
           </div>
         </div>
 
-        <footer className="bg-black text-white py-12 border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              <div>
-                <h4 className="text-lg font-bold mb-4">ReifenDrive</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Ihr Experte für Reifen und Felgen in Wuppertal. <br />
-                  Qualität, die bewegt.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold mb-4">Rechtliches</h4>
-                <ul className="space-y-2 text-sm text-gray-500">
-                  <li><Link href="/impressum" className="hover:text-primary transition-colors">Impressum</Link></li>
-                  <li><Link href="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link></li>
-                  <li><Link href="/agb" className="hover:text-primary transition-colors">AGB</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold mb-4">Kontakt</h4>
-                <ul className="space-y-2 text-sm text-gray-500">
-                  <li>Ludwig-Richter-Str. 13</li>
-                  <li>42429 Wuppertal</li>
-                  <li>Tel: +49 163 7947079</li>
-                </ul>
-              </div>
-            </div>
-            <div className="pt-8 border-t border-white/10 text-center text-sm text-gray-600">
-              &copy; {new Date().getFullYear()} ReifenDrive - Taha Taleb. Alle Rechte vorbehalten.
-            </div>
-            <CodionFooterCredit />
-          </div>
-        </footer>
-      </div>
-    </>
+    </PageShell>
   );
 }

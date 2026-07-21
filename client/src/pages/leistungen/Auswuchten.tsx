@@ -1,19 +1,14 @@
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { SEO } from "@/components/SEO";
 
 export default function Auswuchten() {
   return (
     <>
-      <SEO
-        title="Reifen auswuchten in Wuppertal | ReifenDrive – Taha Taleb"
-        description="Reifen präzise auswuchten in Wuppertal für ein ruhiges Fahrverhalten und geringeren Verschleiß. ReifenDrive – Taha Taleb."
-      />
       <ServiceDetailLayout
         title="Reifen auswuchten"
         seoTitle="Reifen auswuchten in Wuppertal"
         seoDescription="Reifen auswuchten in Wuppertal"
         intro="Präzises Auswuchten für maximalen Fahrkomfort – weniger Vibrationen, weniger Verschleiß."
-        heroImage="https://i.imgur.com/fiwh1Hk.jpeg"
+        heroImage="/img/auswuchten.webp"
         description="Unwucht an den Reifen führt zu unangenehmen Vibrationen im Lenkrad, erhöhtem Reifenverschleiß und Belastung der Radaufhängung. Bei ReifenDrive setzen wir auf computergestützte Wuchtmaschinen, die selbst minimale Unwuchten erkennen und millimetergenau ausgleichen. Das Ergebnis: ein spürbar ruhigeres und sichereres Fahrgefühl."
         benefits={[
           "Spürbar weniger Vibrationen beim Fahren",

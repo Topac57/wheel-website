@@ -1,165 +1,103 @@
-import { useState, useEffect } from "react";
-import { Link as ScrollLink } from "react-scroll";
+import { useRef } from "react";
+import { Menu, Phone, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import logoImage from "@assets/logo-taleb_1769854324948.png";
+import { business } from "@/lib/business";
+import { CallLink } from "@/components/CallLink";
+
+/**
+ * Die Sprungmarken sind gewöhnliche `#`-Anker statt einer Scroll-Bibliothek.
+ * Sie funktionieren damit auch ohne JavaScript, und das weiche Scrollen
+ * übernimmt `scroll-behavior: smooth` aus dem Stylesheet.
+ */
+const navLinks = [
+  { name: "Start", href: "/#home" },
+  { name: "Leistungen", href: "/#leistungen" },
+  { name: "Bewertungen", href: "/#vertrauen" },
+  { name: "Kontakt", href: "/#contact" },
+];
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
   const isHomePage = location === "/";
+  const menuRef = useRef<HTMLDetailsElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: "Start", to: "home", href: "/" },
-    { name: "Leistungen", to: "leistungen", href: "/#leistungen" },
-    { name: "Über Uns", to: "about", href: "/#about" },
-    { name: "Kontakt", to: "contact", href: "/#contact" },
-  ];
+  // Auf der Startseite reicht die reine Sprungmarke, sonst muss der Pfad mit.
+  const linkHref = (href: string) => (isHomePage ? href.replace("/#", "#") : href);
+  const closeMenu = () => {
+    if (menuRef.current) menuRef.current.open = false;
+  };
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-4"
-      )}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {isHomePage ? (
-            <ScrollLink
-              to="home"
-              smooth={true}
-              className="cursor-pointer"
-              data-testid="link-home-logo"
-            >
-              <img
-                src={logoImage}
-                alt="ReifenDrive Logo"
-                className={cn(
-                  "h-12 md:h-14 w-auto transition-all",
-                  !isScrolled && "brightness-0 invert lg:brightness-100 lg:invert-0"
-                )}
-              />
-            </ScrollLink>
-          ) : (
-            <Link href="/" className="cursor-pointer" data-testid="link-home-logo">
-              <img
-                src={logoImage}
-                alt="ReifenDrive Logo"
-                className={cn(
-                  "h-12 md:h-14 w-auto transition-all",
-                  !isScrolled && "brightness-0 invert lg:brightness-100 lg:invert-0"
-                )}
-              />
-            </Link>
-          )}
+    <header className="absolute inset-x-0 top-0 z-40 py-3">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-3">
+          <Link href="/" className="shrink-0" data-testid="link-home-logo" onClick={closeMenu}>
+            <img
+              src="/img/logo-reifendrive.webp"
+              alt="ReifenDrive – Reifenservice Wuppertal-Vohwinkel"
+              width={140}
+              height={47}
+              className="h-10 w-auto brightness-0 invert md:h-12"
+            />
+          </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) =>
-              isHomePage ? (
-                <ScrollLink
-                  key={link.name}
-                  to={link.to}
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  className={cn(
-                    "text-sm font-medium cursor-pointer hover:text-primary transition-colors uppercase tracking-wide",
-                    isScrolled ? "text-slate-600" : "text-white/90 hover:text-white"
-                  )}
-                  data-testid={`link-nav-${link.to}`}
-                >
-                  {link.name}
-                </ScrollLink>
-              ) : (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    "text-sm font-medium cursor-pointer hover:text-primary transition-colors uppercase tracking-wide",
-                    isScrolled ? "text-slate-600" : "text-white/90 hover:text-white"
-                  )}
-                  data-testid={`link-nav-${link.to}`}
-                >
-                  {link.name}
-                </Link>
-              )
-            )}
-            <a href="tel:+491637947079" data-testid="button-nav-call">
-              <Button
-                variant={isScrolled ? "default" : "secondary"}
-                className={cn(
-                  "gap-2 font-bold rounded-full px-6",
-                  !isScrolled && "bg-white text-primary hover:bg-white/90"
-                )}
+          <nav className="hidden items-center gap-8 md:flex">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={linkHref(link.href)}
+                className="text-sm font-medium uppercase tracking-wide text-white/90 transition-colors hover:text-white"
+                data-testid={`link-nav-${link.name.toLowerCase()}`}
               >
-                <Phone className="h-4 w-4" />
-                Anrufen
-              </Button>
-            </a>
+                {link.name}
+              </a>
+            ))}
+            {/* Bewusst nur „Anrufen“ statt der Nummer: die steht groß im Hero.
+                Zweimal dieselbe Nummer auf einem Bildschirm wirkt marktschreierisch. */}
+            <CallLink
+              className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 font-display font-bold text-slate-900 transition-colors hover:bg-white/90"
+              testId="button-nav-call"
+            >
+              <Phone className="h-4 w-4" />
+              Anrufen
+            </CallLink>
           </nav>
 
-          <button
-            className={cn(
-              "md:hidden p-2 rounded-md",
-              isScrolled ? "text-slate-900" : "text-slate-900 lg:text-white"
-            )}
-            onClick={() => setIsOpen(!isOpen)}
-            data-testid="button-mobile-menu"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobil: <details> statt React-State — das Menü öffnet sich auch,
+              wenn das JS-Bundle noch nicht geladen ist. */}
+          <details ref={menuRef} className="group relative md:hidden">
+            <summary
+              className="flex cursor-pointer list-none items-center rounded-lg p-2 text-white [&::-webkit-details-marker]:hidden"
+              aria-label="Menü öffnen"
+              data-testid="button-mobile-menu"
+            >
+              <Menu className="h-6 w-6 group-open:hidden" />
+              <X className="hidden h-6 w-6 group-open:block" />
+            </summary>
+
+            <div className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={linkHref(link.href)}
+                  onClick={closeMenu}
+                  className="block rounded-lg px-3 py-2.5 font-medium text-slate-800 hover:bg-slate-100"
+                  data-testid={`link-mobile-${link.name.toLowerCase()}`}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <CallLink
+                className="mt-1 flex items-center justify-center gap-2 rounded-lg bg-primary px-3 py-3 font-display font-bold text-primary-foreground"
+                testId="button-mobile-call"
+              >
+                <Phone className="h-4 w-4" />
+                {business.phoneDisplay}
+              </CallLink>
+            </div>
+          </details>
         </div>
       </div>
-
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-xl animate-in slide-in-from-top-5">
-          <div className="flex flex-col p-4 gap-4">
-            {navLinks.map((link) =>
-              isHomePage ? (
-                <ScrollLink
-                  key={link.name}
-                  to={link.to}
-                  smooth={true}
-                  offset={-80}
-                  className="text-lg font-medium text-slate-800 py-2 border-b border-gray-100"
-                  onClick={() => setIsOpen(false)}
-                  data-testid={`link-mobile-${link.to}`}
-                >
-                  {link.name}
-                </ScrollLink>
-              ) : (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-lg font-medium text-slate-800 py-2 border-b border-gray-100"
-                  onClick={() => setIsOpen(false)}
-                  data-testid={`link-mobile-${link.to}`}
-                >
-                  {link.name}
-                </Link>
-              )
-            )}
-            <a href="tel:+491637947079" className="w-full" data-testid="button-mobile-call">
-              <Button className="w-full gap-2 rounded-xl py-6 text-lg">
-                <Phone className="h-5 w-5" />
-                Jetzt Anrufen
-              </Button>
-            </a>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

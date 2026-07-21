@@ -1,20 +1,15 @@
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 
 export default function ReifenAnVerkauf() {
   return (
     <>
-      <SEO
-        title="An- & Verkauf von Reifen in Wuppertal | ReifenDrive – Taha Taleb"
-        description="Reifen kaufen und verkaufen in Wuppertal. Neu- und Gebrauchtreifen – fair, geprüft und passend. ReifenDrive – Taha Taleb."
-      />
       <ServiceDetailLayout
         title="An- & Verkauf von Reifen"
         seoTitle="Reifen An- & Verkauf in Wuppertal"
         seoDescription="Reifen kaufen und verkaufen in Wuppertal"
         intro="Hochwertige Neu- und Gebrauchtreifen kaufen oder Ihre alten Reifen fair verkaufen – alles aus einer Hand."
-        heroImage="https://i.imgur.com/P54z2O0.jpeg"
+        heroImage="/img/reifen-an-verkauf.webp"
         description="Bei ReifenDrive finden Sie ein sorgfältig ausgewähltes Sortiment an Neu- und Gebrauchtreifen. Jeder Gebrauchtreifen wird vor dem Verkauf auf Profiltiefe, Beschädigungen und Alter geprüft. Gleichzeitig kaufen wir gut erhaltene Reifen zu fairen Preisen an. Kontaktieren Sie uns für aktuelle Verfügbarkeit und individuelle Angebote."
         benefits={[
           "Geprüfte Neu- und Gebrauchtreifen zu fairen Preisen",

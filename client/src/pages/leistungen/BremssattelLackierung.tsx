@@ -1,19 +1,14 @@
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { SEO } from "@/components/SEO";
 
 export default function BremssattelLackierung() {
   return (
     <>
-      <SEO
-        title="Optische Aufbereitung von Bremssätteln in Wuppertal | ReifenDrive – Taha Taleb"
-        description="Professionelle optische Aufbereitung und farbliche Veredelung Ihrer Bremssättel in Wuppertal. Für einen sportlichen Look – ReifenDrive – Taha Taleb."
-      />
       <ServiceDetailLayout
         title="Optische Aufbereitung von Bremssätteln"
         seoTitle="Optische Aufbereitung von Bremssätteln in Wuppertal"
         seoDescription="Optische Aufbereitung und farbliche Veredelung von Bremssätteln in Wuppertal"
         intro="Setzen Sie sportliche Akzente – individuelle optische Aufbereitung und farbliche Veredelung Ihrer Bremssättel in Ihrer Wunschfarbe."
-        heroImage="https://i.imgur.com/oQV4knw.jpeg"
+        heroImage="/img/bremssattel.webp"
         description="Farbige Bremssättel sind das i-Tüpfelchen für jeden Fahrzeug-Enthusiasten. Bei ReifenDrive bieten wir eine professionelle optische Aufbereitung Ihrer Bremssättel an – in Ihrer Wunschfarbe, ob klassisches Rot, sportliches Gelb, dezentes Schwarz oder passend zur Fahrzeugfarbe. Das Ergebnis ist ein hochwertiger, sportlicher Look, der Ihrem Fahrzeug einen individuellen Charakter verleiht."
         benefits={[
           "Individuelle farbliche Veredelung nach Ihren Wünschen",

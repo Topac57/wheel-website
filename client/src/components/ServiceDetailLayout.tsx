@@ -1,12 +1,9 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
-import { Phone, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import type { ReactNode } from "react";
+import { ChevronLeft, ChevronRight, MessageCircle, Phone } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Navbar } from "@/components/Navbar";
-import { FloatingActions } from "@/components/FloatingActions";
-import { CodionFooterCredit } from "@/components/CodionFooterCredit";
+import { business } from "@/lib/business";
+import { PageShell } from "@/components/PageShell";
+import { CallLink, WhatsAppLink } from "@/components/CallLink";
 
 interface FAQItem {
   question: string;
@@ -23,14 +20,12 @@ interface ServiceDetailLayoutProps {
   process: string[];
   faq: FAQItem[];
   heroImage: string;
-  children?: React.ReactNode;
-  extraSections?: React.ReactNode;
+  children?: ReactNode;
+  extraSections?: ReactNode;
 }
 
 export function ServiceDetailLayout({
   title,
-  seoTitle,
-  seoDescription,
   intro,
   description,
   benefits,
@@ -40,220 +35,164 @@ export function ServiceDetailLayout({
   children,
   extraSections,
 }: ServiceDetailLayoutProps) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="min-h-screen font-sans bg-background text-foreground pb-20 md:pb-0">
-      <Navbar />
-      <FloatingActions />
-
-      <section className="relative pt-32 pb-20 overflow-hidden">
+    <PageShell>
+      <section className="relative overflow-hidden pb-16 pt-28 md:pt-32">
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt={title}
-            className="w-full h-full object-cover"
-            style={{ filter: "blur(2px)" }}
+            alt=""
+            aria-hidden="true"
+            decoding="async"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-900/95" />
         </div>
 
-        <div className="max-w-4xl mx-auto container-padding relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <nav className="flex items-center gap-2 text-sm text-white/60 mb-8 flex-wrap" data-testid="breadcrumb">
-              <Link href="/" className="hover:text-white transition-colors" data-testid="link-breadcrumb-home">
-                Startseite
-              </Link>
-              <ChevronRight className="w-4 h-4" />
-              <Link href="/#leistungen" className="hover:text-white transition-colors" data-testid="link-breadcrumb-services">
-                Leistungen
-              </Link>
-              <ChevronRight className="w-4 h-4" />
-              <span className="text-white font-medium">{title}</span>
-            </nav>
+        <div className="container-padding relative z-10 mx-auto max-w-4xl">
+          <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-white/60" data-testid="breadcrumb">
+            <Link href="/" className="transition-colors hover:text-white" data-testid="link-breadcrumb-home">
+              Startseite
+            </Link>
+            <ChevronRight className="h-4 w-4" />
+            <Link href="/#leistungen" className="transition-colors hover:text-white" data-testid="link-breadcrumb-services">
+              Leistungen
+            </Link>
+            <ChevronRight className="h-4 w-4" />
+            <span className="font-medium text-white">{title}</span>
+          </nav>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              {title}
-            </h1>
-            <p className="text-xl text-white/80 max-w-2xl leading-relaxed">
-              {intro}
-            </p>
-          </motion.div>
+          <h1 className="mb-4 font-display text-3xl font-bold leading-tight text-white md:text-5xl">
+            {title}
+          </h1>
+          <p className="mb-6 max-w-2xl text-lg leading-relaxed text-white/80">{intro}</p>
+
+          {/* Anruf direkt im sichtbaren Bereich — auch auf den Unterseiten. */}
+          <CallLink
+            className="inline-flex items-center gap-2.5 rounded-full bg-primary px-6 py-3.5 font-display text-lg font-extrabold text-primary-foreground shadow-lg transition-transform active:scale-[0.98]"
+            testId="button-detail-hero-call"
+          >
+            <Phone className="h-5 w-5 shrink-0" />
+            {business.phoneDisplay}
+          </CallLink>
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="max-w-4xl mx-auto container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-12"
-          >
+      <section className="bg-white py-12 md:py-20">
+        <div className="container-padding mx-auto max-w-4xl space-y-12">
+          <div>
+            <h2 className="mb-4 font-display text-2xl font-bold md:text-3xl">Unser Service im Detail</h2>
+            <p className="text-lg leading-relaxed text-slate-600">{description}</p>
+          </div>
+
+          {children}
+
+          <div className="grid gap-8 md:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Unser Service im Detail</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>
+              <h3 className="mb-4 font-display text-xl font-bold md:text-2xl">Ihre Vorteile</h3>
+              <ul className="space-y-3">
+                {benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                    <span className="text-slate-600">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            {children}
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Ihre Vorteile</h3>
-                <ul className="space-y-3">
-                  {benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0" />
-                      <span className="text-muted-foreground">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Ablauf</h3>
-                <ol className="space-y-3">
-                  {process.map((step, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="mt-0.5 flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-sm font-bold shrink-0">
-                        {i + 1}
-                      </span>
-                      <span className="text-muted-foreground">{step}</span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+            <div>
+              <h3 className="mb-4 font-display text-xl font-bold md:text-2xl">Ablauf</h3>
+              <ol className="space-y-3">
+                {process.map((step, i) => (
+                  <li key={step} className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                      {i + 1}
+                    </span>
+                    <span className="text-slate-600">{step}</span>
+                  </li>
+                ))}
+              </ol>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {extraSections}
 
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-4xl mx-auto container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold mb-8">Häufige Fragen</h2>
-            <div className="space-y-4">
-              {faq.map((item, i) => (
-                <Card key={i} className="border-none shadow-sm">
-                  <CardContent className="p-6">
-                    <h4 className="text-lg font-bold mb-2">{item.question}</h4>
-                    <p className="text-muted-foreground leading-relaxed">{item.answer}</p>
-                  </CardContent>
-                </Card>
-              ))}
+      <section className="bg-slate-50 py-12 md:py-16">
+        <div className="container-padding mx-auto max-w-4xl">
+          <h2 className="mb-6 font-display text-2xl font-bold md:text-3xl">Häufige Fragen</h2>
+          <div className="space-y-4">
+            {faq.map((item) => (
+              <div key={item.question} className="rounded-xl bg-white p-6 shadow-sm">
+                <h3 className="mb-2 font-display text-lg font-bold">{item.question}</h3>
+                <p className="leading-relaxed text-slate-600">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12 md:py-16">
+        <div className="container-padding mx-auto max-w-4xl">
+          <div className="rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 p-8 text-center md:p-12">
+            <h2 className="mb-3 font-display text-2xl font-bold text-white md:text-3xl">
+              Auch ohne Termin – rufen Sie einfach an
+            </h2>
+            <p className="mb-8 text-slate-300 md:text-lg">
+              Wir sagen Ihnen sofort, ob Sie direkt vorbeikommen können.
+            </p>
+
+            <div className="mb-8 flex flex-wrap items-center justify-center gap-3">
+              <CallLink
+                className="inline-flex items-center gap-2.5 rounded-full bg-primary px-6 py-3.5 font-display text-lg font-extrabold text-primary-foreground shadow-lg transition-transform active:scale-[0.98]"
+                testId="button-detail-call"
+              >
+                <Phone className="h-5 w-5 shrink-0" />
+                {business.phoneDisplay}
+              </CallLink>
+              <WhatsAppLink
+                className="inline-flex items-center gap-2.5 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 font-display text-lg font-bold text-white transition-colors hover:bg-white/20"
+                testId="button-detail-whatsapp"
+              >
+                <MessageCircle className="h-5 w-5 shrink-0 text-[#25D366]" />
+                WhatsApp
+              </WhatsAppLink>
             </div>
-          </motion.div>
+
+            <address className="space-y-1 text-sm not-italic text-slate-400">
+              <p className="font-medium text-white">{business.name}</p>
+              <p>
+                {business.street}, {business.postalCode} {business.city}-{business.district}
+              </p>
+              <p>
+                <a href="mailto:reifendrive@gmail.com" data-testid="link-detail-email">
+                  reifendrive@gmail.com
+                </a>
+              </p>
+            </address>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+      <div className="bg-slate-50 py-8">
+        <div className="container-padding mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 sm:flex-row">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 font-medium text-slate-700 transition-colors hover:bg-white"
+            data-testid="link-back-home"
           >
-            <Card className="border-none shadow-xl overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800" />
-              <CardContent className="relative z-10 p-8 md:p-12 text-center">
-                <h2 className="text-3xl font-bold text-white mb-3">Termin vereinbaren</h2>
-                <p className="text-gray-400 text-lg mb-8">
-                  Schnell per Telefon oder WhatsApp – wir freuen uns auf Sie.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                  <a href="tel:+491637947079" data-testid="button-detail-call">
-                    <Button className="h-14 px-8 rounded-full text-lg font-bold bg-primary shadow-lg shadow-primary/25 transition-all duration-300">
-                      <Phone className="mr-2 h-5 w-5" />
-                      Jetzt anrufen
-                    </Button>
-                  </a>
-                  <a
-                    href="https://wa.me/491637947079"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="button-detail-whatsapp"
-                  >
-                    <Button variant="outline" className="h-14 px-8 rounded-full text-lg font-bold border-white/20 bg-[#25D366] text-white">
-                      <MessageCircle className="mr-2 h-5 w-5" />
-                      WhatsApp
-                    </Button>
-                  </a>
-                </div>
-
-                <div className="text-gray-400 text-sm space-y-1">
-                  <p className="font-medium text-white">ReifenDrive – Taha Taleb</p>
-                  <p>Ludwig-Richter-Str. 13, 42429 Wuppertal</p>
-                  <p>
-                    <a href="mailto:reifendrive@gmail.com" className="transition-colors" data-testid="link-detail-email">reifendrive@gmail.com</a>
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      <div className="py-8 bg-slate-50">
-        <div className="max-w-4xl mx-auto container-padding flex flex-col sm:flex-row items-center justify-between gap-4">
-          <Link href="/" data-testid="link-back-home">
-            <Button variant="outline" className="gap-2 rounded-full">
-              <ChevronLeft className="w-4 h-4" />
-              Zurück zur Startseite
-            </Button>
+            <ChevronLeft className="h-4 w-4" />
+            Zurück zur Startseite
           </Link>
-          <Link href="/#leistungen" data-testid="link-all-services">
-            <Button variant="ghost" className="gap-2 rounded-full text-primary">
-              Alle Leistungen ansehen
-            </Button>
+          <Link
+            href="/#leistungen"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium text-primary hover:underline"
+            data-testid="link-all-services"
+          >
+            Alle Leistungen ansehen
           </Link>
         </div>
       </div>
-
-      <footer className="bg-black text-white py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto container-padding">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h4 className="text-lg font-bold mb-4">ReifenDrive</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Ihr Experte für Reifen und Felgen in Wuppertal. <br />
-                Qualität, die bewegt.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-bold mb-4">Rechtliches</h4>
-              <ul className="space-y-2 text-sm text-gray-500">
-                <li><Link href="/impressum" className="hover:text-primary transition-colors">Impressum</Link></li>
-                <li><Link href="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link></li>
-                <li><Link href="/agb" className="hover:text-primary transition-colors">AGB</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-bold mb-4">Kontakt</h4>
-              <ul className="space-y-2 text-sm text-gray-500">
-                <li>Ludwig-Richter-Str. 13</li>
-                <li>42429 Wuppertal</li>
-                <li>Tel: +49 163 7947079</li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-white/10 text-center text-sm text-gray-600">
-            &copy; {new Date().getFullYear()} ReifenDrive - Taha Taleb. Alle Rechte vorbehalten.
-          </div>
-          <CodionFooterCredit />
-        </div>
-      </footer>
-    </div>
+    </PageShell>
   );
 }

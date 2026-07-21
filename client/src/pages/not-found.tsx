@@ -1,21 +1,43 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { Phone } from "lucide-react";
+import { Link } from "wouter";
+import { business } from "@/lib/business";
+import { PageShell } from "@/components/PageShell";
+import { CallLink } from "@/components/CallLink";
 
+/**
+ * Wer hier landet, hat sich vertippt oder folgt einem alten Link — und hat
+ * trotzdem ein Anliegen. Statt einer Sackgasse steht deshalb auch hier die
+ * Telefonnummer.
+ */
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md mx-4">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">404 Page Not Found</h1>
-          </div>
-
-          <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
+    <PageShell>
+      <section className="flex min-h-[70vh] items-center bg-slate-50 py-20">
+        <div className="container-padding mx-auto max-w-xl text-center">
+          <p className="mb-2 font-display text-5xl font-extrabold text-primary">404</p>
+          <h1 className="mb-3 font-display text-2xl font-bold text-slate-900 md:text-3xl">
+            Diese Seite gibt es nicht
+          </h1>
+          <p className="mb-8 text-slate-600">
+            Der Link führt ins Leere. Ihr Anliegen klären wir aber am schnellsten sowieso
+            am Telefon – auch ohne Termin.
           </p>
-        </CardContent>
-      </Card>
-    </div>
+
+          <CallLink
+            className="inline-flex items-center gap-2.5 rounded-full bg-primary px-6 py-3.5 font-display text-lg font-extrabold text-primary-foreground shadow-lg"
+            testId="button-404-call"
+          >
+            <Phone className="h-5 w-5 shrink-0" />
+            {business.phoneDisplay}
+          </CallLink>
+
+          <p className="mt-8">
+            <Link href="/" className="font-medium text-primary hover:underline">
+              Zurück zur Startseite
+            </Link>
+          </p>
+        </div>
+      </section>
+    </PageShell>
   );
 }

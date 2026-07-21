@@ -1,7 +1,5 @@
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
-import { motion } from "framer-motion";
 
 const premiumBrands = [
   "Continental", "Michelin", "Pirelli", "Bridgestone", "Goodyear",
@@ -13,11 +11,7 @@ function BrandGridSection() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto container-padding">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div>
           <h2 className="text-3xl font-bold mb-4" data-testid="heading-tire-brands">Premium-Reifenmarken</h2>
           <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
             Wir führen eine breite Auswahl an Premium-Reifen führender Hersteller – je nach Saison und Verfügbarkeit.
@@ -40,7 +34,7 @@ function BrandGridSection() {
           <p className="text-muted-foreground text-sm mt-6">
             Weitere Marken auf Anfrage.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -49,16 +43,12 @@ function BrandGridSection() {
 export default function Reifenwechsel() {
   return (
     <>
-      <SEO
-        title="Reifenwechsel in Wuppertal – Sommer, Winter, Allwetter | ReifenDrive"
-        description="Professioneller Reifenwechsel in Wuppertal: Sommer-, Winter- und Allwetterreifen. Fachgerecht, schnell und sicher bei ReifenDrive – Taha Taleb."
-      />
       <ServiceDetailLayout
         title="Reifenwechsel (Sommer / Winter / Allwetter)"
         seoTitle="Reifenwechsel in Wuppertal"
         seoDescription="Professioneller Reifenwechsel in Wuppertal"
         intro="Saisonaler Reifenwechsel vom Profi – schnell, sicher und schonend für Ihr Fahrzeug."
-        heroImage="https://i.imgur.com/KYSBCNi.jpeg"
+        heroImage="/img/reifenwechsel.webp"
         description="Der regelmäßige Reifenwechsel ist essenziell für Ihre Sicherheit und die Langlebigkeit Ihrer Reifen. Bei ReifenDrive sorgen wir dafür, dass Ihr Fahrzeug zu jeder Jahreszeit optimal bereift ist. Ob Sommerreifen für trockene Straßen, Winterreifen für Eis und Schnee oder Allwetterreifen für ganzjährigen Komfort – wir beraten Sie individuell und montieren fachgerecht. Auch für Kunden mit kleinerem Budget bieten wir passende und zuverlässige Lösungen an."
         benefits={[
           "Maximale Sicherheit zu jeder Jahreszeit",

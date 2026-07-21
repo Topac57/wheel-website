@@ -1,6 +1,8 @@
 node_modules
 dist
 .DS_Store
-server/public
 vite.config.ts.*
-*.tar.gz.local/
+*.tar.gz
+
+# Werkzeug-Artefakte der früheren Replit-Umgebung, gehören nicht zur Website
+.local/

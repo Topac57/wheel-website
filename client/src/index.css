@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+/* Die Schriften werden in index.html geladen. Ein @import hier würde erst nach
+   dem Herunterladen des Stylesheets ausgewertet und das Rendern zusätzlich
+   verzögern. */
 
 @tailwind base;
 @tailwind components;

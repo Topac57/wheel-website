@@ -1,36 +1,27 @@
-import { pgTable, text, serial, boolean, timestamp } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
-import { z } from "zod";
+/**
+ * Typen für die Leistungen.
+ *
+ * Früher wurden diese Typen aus einem Datenbankschema (Drizzle + Zod)
+ * abgeleitet und die Leistungen zur Laufzeit von `/api/services` geholt. Diese
+ * API gibt es auf der statisch ausgelieferten Seite nicht — der Aufruf lief
+ * immer in den Fehlerfall und fiel auf dieselbe fest hinterlegte Liste zurück,
+ * die jetzt direkt verwendet wird (siehe `shared/services.ts`).
+ *
+ * Damit entfallen Datenbank- und Validierungsbibliotheken komplett aus dem
+ * Browser-Bündel.
+ */
 
-// === TABLE DEFINITIONS ===
-export const services = pgTable("services", {
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
-  icon: text("icon").notNull(), // Lucide icon name
-  category: text("category").notNull(), // 'tire' or 'rim'
-  image: text("image"), // Background image URL
-  slug: text("slug"), // URL slug for detail page
-});
+export interface Service {
+  id: number;
+  title: string;
+  description: string;
+  /** Name eines Lucide-Icons, siehe IconMap in ServiceCard.tsx. */
+  icon: string;
+  /** 'tire' | 'rim' | 'custom' | 'sales' | 'emergency' */
+  category: string;
+  /** Pfad zum Hintergrundbild, oder null für die Notfallkarte. */
+  image: string | null;
+  slug: string;
+}
 
-export const inquiries = pgTable("inquiries", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  phone: text("phone").notNull(),
-  message: text("message"),
-  createdAt: timestamp("created_at").defaultNow(),
-});
-
-// === SCHEMAS ===
-export const insertServiceSchema = createInsertSchema(services).omit({ id: true });
-export const insertInquirySchema = createInsertSchema(inquiries).omit({ id: true, createdAt: true });
-
-// === EXPLICIT API TYPES ===
-export type Service = typeof services.$inferSelect;
-export type InsertService = z.infer<typeof insertServiceSchema>;
-
-export type Inquiry = typeof inquiries.$inferSelect;
-export type InsertInquiry = z.infer<typeof insertInquirySchema>;
-
-export type CreateInquiryRequest = InsertInquiry;
-export type ServiceListResponse = Service[];
+export type InsertService = Omit<Service, "id">;

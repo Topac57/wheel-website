@@ -1,19 +1,14 @@
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { SEO } from "@/components/SEO";
 
 export default function FelgenInstandsetzung() {
   return (
     <>
-      <SEO
-        title="Felgen Smart Repair in Wuppertal – Reparatur & optische Aufbereitung | ReifenDrive"
-        description="Professionelle Felgen Smart Repair in Wuppertal: Bordsteinschäden reparieren, Felgen optisch aufbereiten und farblich veredeln. ReifenDrive – Taha Taleb."
-      />
       <ServiceDetailLayout
         title="Felgen Smart Repair"
         seoTitle="Felgen Smart Repair in Wuppertal"
         seoDescription="Professionelle Felgen Smart Repair in Wuppertal"
         intro="Bordsteinschäden, Kratzer oder abgeplatzte Farbe? Wir bringen Ihre Felgen professionell wieder in Form – präzise, farbgetreu und mit perfektem Finish."
-        heroImage="https://i.imgur.com/IZqqFth.jpeg"
+        heroImage="/img/felgen-smart-repair.webp"
         description="Beschädigte Felgen sind nicht nur ein optischer Makel, sondern können auch die Sicherheit beeinträchtigen. Bei ReifenDrive bieten wir eine umfassende Felgen Smart Repair an: Von der Reparatur typischer Bordsteinschäden über die Beseitigung von Kratzern und Dellen bis hin zur farblichen Veredelung in der passenden Felgenfarbe. Wir arbeiten mit präziser Farbtonanpassung, damit Ihre Felgen nach der Aufbereitung wieder wie neu aussehen. Auch größere Beschädigungen setzen wir – soweit technisch möglich – fachgerecht instand."
         benefits={[
           "Fachgerechte Reparatur von Bordsteinschäden und Kratzern",

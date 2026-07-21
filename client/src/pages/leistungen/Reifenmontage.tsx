@@ -1,19 +1,14 @@
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { SEO } from "@/components/SEO";
 
 export default function Reifenmontage() {
   return (
     <>
-      <SEO
-        title="Reifenmontage & Demontage in Wuppertal | ReifenDrive – Taha Taleb"
-        description="Professionelle Reifenmontage und Demontage in Wuppertal. Schonend für Stahl- und Alufelgen. ReifenDrive – Taha Taleb."
-      />
       <ServiceDetailLayout
         title="Reifenmontage & Demontage"
         seoTitle="Reifenmontage in Wuppertal"
         seoDescription="Professionelle Reifenmontage in Wuppertal"
         intro="Fachgerechte Montage und Demontage Ihrer Reifen – schonend, präzise und auf modernstem Equipment."
-        heroImage="https://i.imgur.com/RztsjSj.jpeg"
+        heroImage="/img/reifenmontage.webp"
         description="Ob Neubereifung, Reifentausch oder saisonaler Wechsel – bei ReifenDrive montieren wir Ihre Reifen mit modernsten Maschinen, die speziell für die felgenschonende Behandlung ausgelegt sind. Wir arbeiten mit Stahl- und Alufelgen aller gängigen Hersteller und achten dabei auf höchste Präzision."
         benefits={[
           "Felgenschonende Montage mit modernster Technik",

@@ -1,26 +1,11 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/Navbar";
-import { FloatingActions } from "@/components/FloatingActions";
-import { SEO } from "@/components/SEO";
-import { CodionFooterCredit } from "@/components/CodionFooterCredit";
+import { PageShell } from "@/components/PageShell";
 
 export default function AGB() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <>
-      <SEO
-        title="Allgemeine Geschäftsbedingungen (AGB) | ReifenDrive – Taha Taleb, Wuppertal"
-        description="Allgemeine Geschäftsbedingungen (AGB) der Reifenwerkstatt Taha Taleb – ReifenDrive, Wuppertal."
-      />
-      <div className="min-h-screen font-sans bg-white text-foreground pb-20 md:pb-0">
-        <Navbar />
-        <FloatingActions />
+    <PageShell>
 
         <div className="pt-28 pb-16">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,40 +80,6 @@ export default function AGB() {
           </div>
         </div>
 
-        <footer className="bg-black text-white py-12 border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              <div>
-                <h4 className="text-lg font-bold mb-4">ReifenDrive</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Ihr Experte für Reifen und Felgen in Wuppertal. <br />
-                  Qualität, die bewegt.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold mb-4">Rechtliches</h4>
-                <ul className="space-y-2 text-sm text-gray-500">
-                  <li><Link href="/impressum" className="hover:text-primary transition-colors">Impressum</Link></li>
-                  <li><Link href="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link></li>
-                  <li><Link href="/agb" className="hover:text-primary transition-colors">AGB</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold mb-4">Kontakt</h4>
-                <ul className="space-y-2 text-sm text-gray-500">
-                  <li>Ludwig-Richter-Str. 13</li>
-                  <li>42429 Wuppertal</li>
-                  <li>Tel: +49 163 7947079</li>
-                </ul>
-              </div>
-            </div>
-            <div className="pt-8 border-t border-white/10 text-center text-sm text-gray-600">
-              &copy; {new Date().getFullYear()} ReifenDrive - Taha Taleb. Alle Rechte vorbehalten.
-            </div>
-            <CodionFooterCredit />
-          </div>
-        </footer>
-      </div>
-    </>
+    </PageShell>
   );
 }
