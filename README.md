@@ -102,5 +102,27 @@ npm run optimize-images
 
 ## Deployment
 
-Vercel, statisch aus `dist/public`. Konfiguration in `vercel.json`
-(`cleanUrls`, `trailingSlash: false`, Cache-Header für `/assets` und `/img`).
+Vercel, statisch aus `dist/public`. Push auf `main` geht direkt live.
+
+Konfiguration in `vercel.json`:
+
+- `cleanUrls` + `trailingSlash: false` → `/impressum` statt `/impressum/index.html`
+- `/assets/*` wird ein Jahr `immutable` gecacht: Diese Dateien tragen einen Hash
+  im Namen, ändern sich also nie unter derselben Adresse.
+- `/img/*` wird einen Tag gecacht mit `stale-while-revalidate`: feste Namen,
+  aber austauschbarer Inhalt.
+
+**`vercel.json` verträgt keine Kommentare und keine unbekannten Schlüssel.**
+Vercel prüft die Datei streng gegen ein Schema (`additionalProperties: false`)
+und bricht das Deployment sonst ab, bevor der Build überhaupt startet — der
+Fehler taucht dann nur als roter Haken am Commit auf, nicht im Build-Log.
+Vor dem Push prüfen:
+
+```bash
+curl -sS https://openapi.vercel.sh/vercel.json -o /tmp/vschema.json
+python3 -c "
+import json
+cfg, s = json.load(open('vercel.json')), json.load(open('/tmp/vschema.json'))
+allowed = set(s['properties']['headers']['items']['properties'])
+print('unbekannte Schlüssel:', [set(h)-allowed for h in cfg['headers'] if set(h)-allowed] or 'keine')"
+```
