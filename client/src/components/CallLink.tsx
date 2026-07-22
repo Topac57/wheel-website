@@ -20,7 +20,12 @@ export function CallLink({
   testId?: string;
 }) {
   return (
-    <a href={business.phoneHref} className={className} data-testid={testId}>
+    <a
+      href={business.phoneHref}
+      className={className}
+      data-google-wcc-phone="business"
+      data-testid={testId}
+    >
       {children}
     </a>
   );

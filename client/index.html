@@ -1,6 +1,193 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <script>
+      (function () {
+        var BUSINESS_TEL_HREF = "tel:+491637947079";
+        var BUSINESS_DIGITS = "491637947079";
+        var BUSINESS_NATIONAL_DIGITS = "01637947079";
+        var BUSINESS_DISPLAY = "0163 794 70 79";
+        var MANAGED_ATTR = "data-google-wcc-managed";
+        var MARKER_ATTR = "data-google-wcc-phone";
+        var ORIGINAL_ATTR = "data-original-tel-href";
+        var forwardingTelHref = "";
+        var forwardingFormattedNumber = "";
+        var syncQueued = false;
+
+        function cleanPhone(value) {
+          return String(value || "")
+            .trim()
+            .replace(/^tel:/i, "")
+            .replace(/[^\d+]/g, "")
+            .replace(/(?!^)\+/g, "");
+        }
+
+        function digitsOnly(value) {
+          return cleanPhone(value).replace(/\D/g, "");
+        }
+
+        function isOriginalNumber(value) {
+          var digits = digitsOnly(value);
+          return digits === BUSINESS_DIGITS || digits === BUSINESS_NATIONAL_DIGITS;
+        }
+
+        function isLikelyPhoneNumber(value) {
+          var digits = digitsOnly(value);
+          return digits.length >= 6 && digits.length <= 16;
+        }
+
+        function toTelHref(value) {
+          var number = cleanPhone(value);
+          if (!number) return "";
+          if (number.indexOf("00") === 0) {
+            number = "+" + number.slice(2);
+          }
+          return "tel:" + number;
+        }
+
+        function isBusinessTelHref(value) {
+          return toTelHref(value) === BUSINESS_TEL_HREF || isOriginalNumber(value);
+        }
+
+        function isForwardingNumber(value) {
+          return isLikelyPhoneNumber(value) && !isOriginalNumber(value);
+        }
+
+        function shouldManageLink(link) {
+          return (
+            link.getAttribute(MANAGED_ATTR) === "true" ||
+            link.getAttribute(MARKER_ATTR) === "business" ||
+            isBusinessTelHref(link.getAttribute("href") || "") ||
+            isOriginalNumber(link.textContent || "")
+          );
+        }
+
+        function setManagedHref(link, telHref) {
+          if (!link.hasAttribute(ORIGINAL_ATTR)) {
+            link.setAttribute(ORIGINAL_ATTR, link.getAttribute("href") || BUSINESS_TEL_HREF);
+          }
+          link.setAttribute(MANAGED_ATTR, "true");
+          if (link.getAttribute("href") !== telHref) {
+            link.setAttribute("href", telHref);
+          }
+        }
+
+        function updateTelLinks(telHref) {
+          if (!document.querySelectorAll) return;
+          document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+            if (shouldManageLink(link)) {
+              setManagedHref(link, telHref);
+            }
+          });
+        }
+
+        function replaceVisiblePhoneText(formattedNumber) {
+          if (!formattedNumber || !document.body) return;
+
+          var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode: function (node) {
+              var parent = node.parentElement;
+              if (!parent || /^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE)$/i.test(parent.tagName)) {
+                return NodeFilter.FILTER_REJECT;
+              }
+              return node.nodeValue && node.nodeValue.indexOf(BUSINESS_DISPLAY) !== -1
+                ? NodeFilter.FILTER_ACCEPT
+                : NodeFilter.FILTER_REJECT;
+            },
+          });
+
+          var nodes = [];
+          while (walker.nextNode()) {
+            nodes.push(walker.currentNode);
+          }
+
+          nodes.forEach(function (node) {
+            node.nodeValue = node.nodeValue.split(BUSINESS_DISPLAY).join(formattedNumber);
+          });
+        }
+
+        function readForwardingNumberFromDom() {
+          if (!document.querySelectorAll) return null;
+          var links = document.querySelectorAll('a[href^="tel:"]');
+
+          for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute("href") || "";
+            if (!isBusinessTelHref(href) && isForwardingNumber(href)) {
+              var text = links[i].textContent || "";
+              return {
+                telHref: toTelHref(href),
+                formattedNumber: isForwardingNumber(text) ? text.trim() : "",
+              };
+            }
+          }
+
+          for (var j = 0; j < links.length; j++) {
+            if (!shouldManageLink(links[j])) continue;
+            var text = links[j].textContent || "";
+            if (isForwardingNumber(text)) {
+              return { telHref: toTelHref(text), formattedNumber: text.trim() };
+            }
+          }
+
+          return null;
+        }
+
+        function applyForwardingNumber(formattedNumber, mobileNumber) {
+          var telHref = toTelHref(mobileNumber || formattedNumber);
+          if (!telHref || !isForwardingNumber(telHref)) return;
+
+          var safeFormattedNumber = isForwardingNumber(formattedNumber) ? formattedNumber : "";
+          forwardingTelHref = telHref;
+          forwardingFormattedNumber = safeFormattedNumber || forwardingFormattedNumber;
+          updateTelLinks(forwardingTelHref);
+          replaceVisiblePhoneText(forwardingFormattedNumber);
+        }
+
+        function syncFromDom() {
+          if (forwardingTelHref) {
+            updateTelLinks(forwardingTelHref);
+            replaceVisiblePhoneText(forwardingFormattedNumber);
+            return;
+          }
+
+          var replacement = readForwardingNumberFromDom();
+          if (replacement) {
+            applyForwardingNumber(replacement.formattedNumber, replacement.telHref);
+          }
+        }
+
+        function scheduleSync() {
+          if (syncQueued) return;
+          syncQueued = true;
+          (window.requestAnimationFrame || window.setTimeout)(function () {
+            syncQueued = false;
+            syncFromDom();
+          }, 0);
+        }
+
+        window.phone_conversion_callback = applyForwardingNumber;
+        window.reifenDrivePhoneConversionCallback = applyForwardingNumber;
+        window.reifenDriveApplyPhoneConversion = applyForwardingNumber;
+
+        if (window.MutationObserver && document.documentElement) {
+          new MutationObserver(scheduleSync).observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["href"],
+            characterData: true,
+            childList: true,
+            subtree: true,
+          });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", scheduleSync, { once: true });
+        } else {
+          scheduleSync();
+        }
+        window.addEventListener("load", scheduleSync, { once: true });
+      })();
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
